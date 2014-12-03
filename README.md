@@ -1,7 +1,13 @@
 Using the National Archives Catalog API
 ==================
+
+> <sup>**Quick links:** This page is a basic FAQ about NARA's online catalog API. If you would like to dive right in and play around, try the sandbox. <br/> Jump to advanced documentation: </sup><br/>
+> &nbsp; &nbsp; &nbsp; <sup>**Search and export** | **Posting contributions** | **[Interactive API sandbox](https://catalog.archives.gov/interactivedocumentation)**</sup>
+
+## Contents
+
 - **[What is the API?](#what-is-the-api)**
-- **[What data does the API contain?](#what-does-the-api-contain)**
+- **[What data does the API contain?](#what-data-does-the-api-contain)**
 - **[What can the API do?](#what-can-the-api-do)**
 - **[How can I use NARA's data?](#how-can-i-use-naras-data)**
 - **[How do I get access to the API?](#how-do-i-get-access-to-the-api)**
