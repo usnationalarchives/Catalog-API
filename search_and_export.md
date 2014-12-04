@@ -21,7 +21,7 @@ Using the API for search and export
 
 ## API basics
 
-- [`https://catalog.archives.gov/api/v1/`](https://catalog.archives.gov/api/v1/)` [method]`
+- [**GET**] [`https://catalog.archives.gov/api/v1/`](https://catalog.archives.gov/api/v1/) + `parameters`
 
 There are two ways to get metadata out of the API: search and export. Both methods allow you to retrieve full records or specified fields for records that match the given parameters. Export is used to download data and/or digital media in bulk, and requires an account so you can retrieve the specified export after it is done processing. You also have to use the bulk export method to retrieve metadata in CSV or PDF, since the normal API responses are only in JSON or XML.
 
