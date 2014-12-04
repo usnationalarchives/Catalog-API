@@ -11,9 +11,9 @@ Posting contributions via API
 ## Summary of write actions
 
 The National Archives Catalog API can be used not just for querying data, but also for writing certain types of data to the system. NARA's online catalog allows tagging and transcribing of catalog records by users with registered accounts, and these actions can be performed via the API as well as the UI. All you need is an account (for attribution of the contribution), registration can be handled through the API (the UI and API use the same accounts).
-
+<!--
 ### What are "tags" and "transcriptions"?
-
+-->
 ## API authentication
 
 ### Registration
