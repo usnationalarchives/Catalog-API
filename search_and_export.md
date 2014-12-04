@@ -13,11 +13,11 @@ Using the API for search and export
 - **[Fielded search](#fielded-search)**
 - **[Sorting results](#sorting-results)**
 - **[Refining the results](#refining-the-results)**
-- ⇢**[Refining by type](#refining-by-type)**
-- ⇢⇢**[Holdings](#holdings)**
-- ⇢⇢**[Authorities](#authorities)**
-- ⇢⇢**[Web pages](#web-pages)**
-- ⇢**[Refining by field](#refining-by-field)**
+- ⇢ **[Refining by type](#refining-by-type)**
+- ⇢⇢ **[Holdings](#holdings)**
+- ⇢⇢ **[Authorities](#authorities)**
+- ⇢⇢ **[Web pages](#web-pages)**
+- ⇢ **[Refining by field](#refining-by-field)**
 
 ## API basics
 
