@@ -29,6 +29,14 @@ You'll notice that if you omit all parameters, and just use the base API path, t
 
 Export uses the same parameters for selecting records as search (but you'll use **`action=export`**), plus a few extra options, but is not currently documented here because it is not yet live.
 
+## Format
+
+Before we begin, a word on format. The API is designed to output responses in JSON by default. It is also defaulting to pretty-printed outputs, which means (depending on browser) you can likely go to any of the search queries linked on this page in your browser and see the structured data in a readable style. If you would like to turn off the pretty-printing for any reason, you can use `pretty=false`.
+
+You can use the optional `format` parameter to change the format of the response to XML, like so:
+
+- [`https://catalog.archives.gov/api/v1/?format=xml`](https://catalog.archives.gov/api/v1/?format=xml)
+
 ## Pagination
 
 To start with, we'll look at how to paginate the results set. Use the `rows=` parameter to set the number of results that will display in the response. Use `offset=` to specify where in the results set to return your results from.
