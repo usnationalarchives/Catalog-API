@@ -37,7 +37,7 @@ Creating an account via the API will still trigger a verification email with a l
 
 ### Login
 
-Once you have a verified account, you may log in to retrieve the credentials required to submit public contributions. The basic logic behind authentication is that you will pass your username and password to the system, and you will receive a time-limited redential token. This credential token should then be passed in the HTTP Authorization header each time you perform an action requiring you to be logged in. The time-limited nature of the credential token works like a browser cookie; it will expire after a period of inactivity, after which point, you will need to perform the login method again to retrieve your new token.
+Once you have a verified account, you may log in to retrieve the credentials required to submit public contributions. The basic logic behind authentication is that you will pass your username and password to the system, and you will receive a time-limited credential token. This credential token should then be passed in the HTTP Authorization header each time you perform an action requiring you to be logged in. The time-limited nature of the credential token works like a browser cookie; it will expire after a period of inactivity, after which point, you will need to perform the login method again to retrieve your new token.
 
 Log in by sending a POST request to the following path:
 
