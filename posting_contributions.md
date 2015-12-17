@@ -41,7 +41,7 @@ Once you have a verified account, you may log in to retrieve the credentials req
 
 Log in by sending a POST request to the following path:
 
-- [`https://catalog.archives.gov/ api/v1/login`](https://catalog.archives.gov/ api/v1/login)
+- [`https://catalog.archives.gov/api/v1/login`](https://catalog.archives.gov/ api/v1/login)
 
 There are 2 required parameters:
 
