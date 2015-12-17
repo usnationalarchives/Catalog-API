@@ -76,15 +76,14 @@ If you know the NAID of the description/authority record to tag, or the parent N
 **Tags:**
 
 - [**POST**]/[**DELETE**] `https://catalog.archives.gov/api/v1/id/{NAID}/tags`
-- [**POST**]/[**DELETE**] `https://catalog.archives.gov/api/v1/id/{NAID}/object/{object identifier}/tags`
+- [**POST**]/[**DELETE**] `https://catalog.archives.gov/api/v1/id/{NAID}/objects/{object identifier}/tags`
 
 **Transcriptions:**
-- [**PUT**] `https://catalog.archives.gov/api/v1/id/{NAID}/transcriptions`
-- [**PUT**] `https://catalog.archives.gov/api/v1/id/{NAID}/object/{object identifier}/transcriptions`
+- [**PUT**] `https://catalog.archives.gov/api/v1/id/{NAID}/objects/{object identifier}/transcriptions`
 
 For tags, use POST to create new tags, and DELETE to remove your own tags (for example a misspelling). Tags are case-insensitive for the purposes of duplicate detecting ("United States" and "united states" are the same tag), and so the system will retain the capitalization preference of the first user to enter that tag.
 
-For transcriptions, always use PUT to create new transcriptions or change existing ones. Every submission of a new transcription for a record simply updates the text. There is no version control on the frontend; you are essentially overwriting what was there before. Of course, moderators have access to the history of revisions and can roll back to old versions if needed. If you want to be conscientious, you can check for existing transcriptions [using search](search_and_export.md) before writing new ones. To remove your own transcription, you would just PUT a new transcription with no text, rather than using DELETE.
+For transcriptions, always use PUT to create new transcriptions or change existing ones. Every submission of a new transcription for a record simply updates the text. There is no version control on the frontend; you are essentially overwriting what was there before. Of course, moderators have access to the history of revisions and can roll back to old versions if needed. If you want to be conscientious, you can check for existing transcriptions [using search](search_and_export.md) before writing new ones. To remove your own transcription, you would just PUT a new transcription with no text, rather than using DELETE. Note, you can only transcribe objects, and not descriptions.
 
 For both contribution types, you will specify the text in the payload using the `text` parameter. So, to apply the tag "president" to a record with the NAID 521451, you would POST `https://catalog.archives.gov/api/v1/id/521451/tags?text=president` (or, more likely, passing the parameter in the body of the request). You can pass multiple tags to create or delete by separating them with commas.
 
