@@ -53,10 +53,6 @@ The National Archives Identifier (*NAID*) is the unique identifier for each desc
 
 This will return the all metadata for each record, but you can also fetch only the specific fields you want, as with any search ([see below](#refining-by-field)). Note that web page results (for archives.gov and presidential libraries web sites) do not have their own NAIDs, and cannot be searched in this way.
 
-**Known issues:** 
-> - <sup>There is a major bug in the current build which assigns the same NAIDs to digital objects as their parent description. This means you could retrieve greater than 1 result when using (theoretical) unique identifier, unless you specifically ask for descriptions ([see below](#refining-by-type)). To specify a specific object, you would have to use fielded search on the different unique identifier field solely for objects, rather than the NAID, for now.</sup>
-- <sup>Note that some authority term names you will come across in the metadata—like restriction notes, names of NARA facilities, or media types—will have NAIDs which cannot be searched on, because we are not currently exporting their metadata.</sup>
-
 ## Keyword search
 
 Use `q=` to search by keyword. Keyword search is used to search for your term across all of the fields in a record for matches.
