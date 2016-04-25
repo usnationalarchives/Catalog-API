@@ -58,9 +58,6 @@ In order to perform the logged-in actions below, you will need to pass the crede
 
 - `Authorization: 8F218BF79D2641D12928FE7DD40F9319.pa03`
 
-**Known issue**:
-> <sup>Currently, in addition to the credential token passed in the Authorization header, you will need to also pass the session cookie for the token to work. We are working to remove this additional step.</sup>
-
 ### Structuring the API request
 
 Generally speaking, any catalog record, whether an archival description, authority record, or digital object, can be tagged. Only digital objects can be transcribed, because each transcription is the textual representation of that given image or recording (such as a scanned page of a document).
@@ -105,6 +102,3 @@ For example, the following search query...
 - [**POST**] `https://catalog.archives.gov/api/v1/?q=armadillo&resultTypes=item&offset=1&tags=armadillos,texas`
 
 Note that you will probably have to have some exception handling built in when using this method, or have a very strictly constructed query, because if you blindly tag or transcribe search results sets you will likely run into issues like trying to apply a tag to a web page result or a transcription to an authority record, which won't work.
-
-**Known issues:**
-> - <sup>Because of the bug affecting digital objects erroneously assigned their parents' NAIDs [noted in the search documentation](search_and_export.md#search-by-identifier), we do not recommend tagging by using the search parameter method unless you are sure the top result of the search you are performing is what you want to tag. It is possible you might want to tag the description with the NAID 521451, but if that description has digital objects attached, you might accidentially tag one of its digital objects if you just use the `naIds=521451` parameter to identify it, depending on how the results set sorts.</sup>
