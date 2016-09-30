@@ -71,5 +71,5 @@ NARA's [Office of the Federal Register](federalregister.gov) also has an API for
 
 ## Where can I report issues?
 
-We welcome reports of issues, whether they are bugs in the system, ideas for improvements, or problems with the underlying data. Please report them using the the GitHub issue tracker [for this repository](https://github.com/Dominic-MP/Online-Catalog-API/issues), or by email to api@nara.gov.
+We welcome reports of issues, whether they are bugs in the system, ideas for improvements, or problems with the underlying data. Please report them using the the GitHub issue tracker [for this repository](https://github.com/usnationalarchives/Catalog-API/issues), or by email to api@nara.gov.
 
