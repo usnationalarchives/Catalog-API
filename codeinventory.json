@@ -1,0 +1,17 @@
+﻿{
+  "name": "National Archives Catalog API",
+  "description": "The National Archives Catalog API is a read–write web API for the online catalog for the National Archives.",
+  "license": null,
+  "openSourceProject": 1,
+  "governmentWideReuseProject": 1,
+  "tags": [
+    "NARA",
+    "API",
+    "Catalog",
+    "Records",
+    "Metadata"
+  ],
+  "contact": {
+    "email": "leslie.johnston@nara.gov"
+  }
+}
