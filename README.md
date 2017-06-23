@@ -43,7 +43,7 @@ When searching, you may return the full metadata for each record, or specify one
 
 NARA's archival metadata is all assumed to be in the public domain, as a work of the federal government, with only rare exceptions (like quotations from other sources).
 
-Digital images themselves are generally also in the public domain for the same reason. In general, all government records are in the public domain and may be freely used. We do have some donated or other materials that might be copyrighted (though these are often not displayed in our catalog). Please read the instructions noted in the "Use Restrictions" field of each catalog record for mroe information about rights, or speak to the archivist or reference staff that handles those records.
+Digital images themselves are generally also in the public domain for the same reason. In general, all government records are in the public domain and may be freely used. We do have some donated or other materials that might be copyrighted (though these are often not displayed in our catalog). Please read the instructions noted in the "Use Restrictions" field of each catalog record for more information about rights, or speak to the archivist or reference staff that handles those records.
 
 For more information, please read [NARA's FAQ on copyright](http://www.archives.gov/faqs/index.html#copyright).
 
