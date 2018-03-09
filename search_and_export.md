@@ -39,11 +39,26 @@ You can use the optional `format` parameter to change the format of the response
 
 ## Pagination
 
-To start with, we'll look at how to paginate the results set. Use the `rows=` parameter to set the number of results that will display in the response. Use `offset=` to specify where in the results set to return your results from.
+To start with, we'll look at how to paginate the results set. There are two different ways to paginate which you can choose from depending on your needs. Cursor-based pagination is necessary for performance reasons when you need to access over 10,000 results, but it requires you to page through all previous results to get to a result you want—whereas basic pagination allows you to use an offset value to specify any result(s) you want within the first 10,000 results in a single query.
+
+### Basic pagination
+For up to 10,000 results, you can simply apply the `rows` and `offset` parameters to specify which results to display.  Use the `rows=` parameter to set the number of results that will display in the response. Use `offset=` to specify where in the results set to return your results from.
 
 - [`https://catalog.archives.gov/api/v1/?rows=5&offset=9`](https://catalog.archives.gov/api/v1/?rows=5&offset=9)
 
-Both parameters are optional; when omitted, `rows` defaults to 10 and `offset` defaults to 0 (i.e., starting from the beginning). Note that the results count from 1 (there is no 0), so you would use <code>&offset=1</code> to get the *second* result. So, our sample query above will return results 10–14. The `num` field in the response tells you the number of each result in the set (it can be omitted or included from responses like other metadata fields below).
+Both parameters are optional; when omitted, `rows` defaults to 10 and `offset` defaults to 0 (i.e., starting from the beginning). Note that the results count from 1 (there is no 0), so you would use <code>&offset=1</code> to get the *second* result. So, our sample query above will return results 10–14. The `num` field in the response tells you the number of each result in the set (it can be omitted or included from responses like other metadata fields below). There is an imposed limit of 10,000 results that can be returned through this pagination method (that is, the combination of `row` and `offset` values cannot exceed 10,000 whether or not you are looking at 10,000 results at once with 10,000 rows and an offset of 0, or looking at the very last result with 1 row and an offset of 9,999.
+
+### Cursor-based pagination
+
+If you would like to page beyond the 10,000th result, you will need to utilize the cursor-based pagination method. With this method, you will page through results sets by receiving a token in each response that you can use to get the next page of results. To begin, simply append `cursorMark=*` to your initial query URL. You may not combine `cursorMark` with `offset`, since the cursor token determines your place in the results set; however, you may use `rows` to specify any number of results per page, up to 10,000.
+
+- [`https://catalog.archives.gov/api/v1/?cursorMark=AoMIP4AAAHCfku2F4gI1b2JqLTU3Mzc3ODU4LTU3Mzc3ODY1-10`](https://catalog.archives.gov/api/v1/?cursorMark=AoMIP4AAAHCfku2F4gI1b2JqLTU3Mzc3ODU4LTU3Mzc3ODY1-10)
+
+Once you have received the response from your initial query, there will be a `nextCursorMark` field in the data, which does not otherwise appear, and it will contain a token such as: `"nextCursorMark":"AoMIP4AAAHCfku2F4gI1b2JqLTU3Mzc3ODU4LTU3Mzc3ODY1-10"`. In order to reach the next set of results, you must take this token and use it for the value of the `cursorMark=` in the next query.
+
+- [`https://catalog.archives.gov/api/v1/?cursorMark=AoMIP4AAAHCfku2F4gI1b2JqLTU3Mzc3ODU4LTU3Mzc3ODY1-10`](https://catalog.archives.gov/api/v1/?cursorMark=AoMIP4AAAHCfku2F4gI1b2JqLTU3Mzc3ODU4LTU3Mzc3ODY1-10)
+
+Continue to do so for each page of results in order to view the subsequent results. Tip: if you are trying to efficiently get to a certain result or group of results in a set, such as the 100,000th result, you can use `rows=10000` to quickly page through the results you do not want, but combine with [`resultFields=num`](#refining-by-field) (as described below) to return the minimum amount of data other than the `nextCursorMark` until you get to the page you want.
 
 ## Search by identifier
 
