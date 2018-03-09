@@ -66,10 +66,14 @@ The National Archives Identifier (*NAID*) is the unique identifier for each desc
 
 - [`https://catalog.archives.gov/api/v1/?naIds=485`](https://catalog.archives.gov/api/v1/?naIds=485)
 
-This will return the all metadata for each record, but you can also fetch only the specific fields you want, as with any search ([see below](#refining-by-field)). Note that web page results (for archives.gov and presidential libraries web sites) do not have their own NAIDs, and cannot be searched in this way.
+This will return the all metadata for each record, but you can also fetch only the specific fields you want, as with any search ([see below](#refining-by-field)).
 
-**Known issues:** 
-> - <sup>There is a major bug in the current build which assigns the same NAIDs to digital objects as their parent description. This means you could retrieve greater than 1 result when using (theoretical) unique identifier, unless you specifically ask for descriptions ([see below](#refining-by-type)). To specify a specific object, you would have to use fielded search on the different unique identifier field solely for objects, rather than the NAID, for now.</sup>
+In addition to NAIDs, the object identifier is the unique identifier for each digital object in the catalog. You can retrieve the specific record of an object with the `objectIds=` parameter, which works the same way as `naIds=`.
+
+- [`https://catalog.archives.gov/api/v1?objectIds=14273499`](https://catalog.archives.gov/api/v1?objectIds=14273499)
+
+Note that web page results (for archives.gov and presidential libraries web sites) do not have their own NAIDs, and cannot be searched in this way.
+
 - <sup>Note that some authority term names you will come across in the metadata—like restriction notes, names of NARA facilities, or media types—will have NAIDs which cannot be searched on, because we are not currently exporting their metadata.</sup>
 
 ## Keyword search
