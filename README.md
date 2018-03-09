@@ -43,7 +43,7 @@ When searching, you may return the full metadata for each record, or specify one
 
 NARA's archival metadata is all assumed to be in the public domain, as a work of the federal government, with only rare exceptions (like quotations from other sources).
 
-Digital images themselves are generally also in the public domain for the same reason. In general, all government records are in the public domain and may be freely used. We do have some donated or other materials that might be copyrighted (though these are often not displayed in our catalog). Please read the instructions noted in the "Use Restrictions" field of each catalog record for mroe information about rights, or speak to the archivist or reference staff that handles those records.
+Digital images themselves are generally also in the public domain for the same reason. In general, all government records are in the public domain and may be freely used. We do have some donated or other materials that might be copyrighted (though these are often not displayed in our catalog). Please read the instructions noted in the "Use Restrictions" field of each catalog record for more information about rights, or speak to the archivist or reference staff that handles those records.
 
 For more information, please read [NARA's FAQ on copyright](http://www.archives.gov/faqs/index.html#copyright).
 
@@ -71,5 +71,5 @@ NARA's [Office of the Federal Register](federalregister.gov) also has an API for
 
 ## Where can I report issues?
 
-We welcome reports of issues, whether they are bugs in the system, ideas for improvements, or problems with the underlying data. Please report them using the the GitHub issue tracker [for this repository](https://github.com/Dominic-MP/Online-Catalog-API/issues), or by email to api@nara.gov.
+We welcome reports of issues, whether they are bugs in the system, ideas for improvements, or problems with the underlying data. Please report them using the the GitHub issue tracker [for this repository](https://github.com/usnationalarchives/Catalog-API/issues), or by email to api@nara.gov.
 
