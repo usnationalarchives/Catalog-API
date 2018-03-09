@@ -74,11 +74,8 @@ In addition to NAIDs, the object identifier is the unique identifier for each di
 
 Note that web page results (for archives.gov and presidential libraries web sites) do not have their own NAIDs, and cannot be searched in this way.
 
-<<<<<<< HEAD
 - <sup>Note that some authority term names you will come across in the metadata—like restriction notes, names of NARA facilities, or media types—will have NAIDs which cannot be searched on, because we are not currently exporting their metadata.</sup>
 
-=======
->>>>>>> origin/master
 ## Keyword search
 
 Use `q=` to search by keyword. Keyword search is used to search for your term across all of the fields in a record for matches.
