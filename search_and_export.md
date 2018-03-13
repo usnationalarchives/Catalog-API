@@ -124,7 +124,7 @@ In fielded search queries, there are additional operations that may be applied b
 For example:
 
 - [`https://catalog.archives.gov/api/v1?description.series.title="letters received"`](https://catalog.archives.gov/api/v1?description.series.title="letters received")
-- [`https://catalog.archives.gov/api/v1?description.series.title\_is=Letters Received`](https://catalog.archives.gov/api/v1?description.series.title\_is=Letters Received)
+- [`https://catalog.archives.gov/api/v1?description.series.title_is=Letters Received`](https://catalog.archives.gov/api/v1?description.series.title_is=Letters Received)
 
 The first query will return results that contain the case-insensitive phrase "letters received" anywhere in the specified field, while the second example will only return results where the field is *exactly* (and only) the case-sensitive phrase "Letters Received".
 
