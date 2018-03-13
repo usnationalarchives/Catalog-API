@@ -115,6 +115,19 @@ You can see how specifying fields within the very nested nature of archival desc
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
 [...]
 
+### Search operators
+
+In fielded search queries, there are additional operations that may be applied beyond a simple search keyword:
+- To search exact phrases, put the phrase in quotes. There can by multiple phrases (or quoted phrases combined with non-quoted terms).
+- For exact-value matches—or non-matches—on a field, append "\_is" or "\_not" to the field name.
+
+For example:
+
+- [`https://catalog.archives.gov/api/v1?description.series.title="letters received"`](https://catalog.archives.gov/api/v1?description.series.title="letters received")
+- [`https://catalog.archives.gov/api/v1?description.series.title\_is=Letters Received`](https://catalog.archives.gov/api/v1?description.series.title\_is=Letters Received)
+
+The first query will return results that contain the case-insensitive phrase "letters received" anywhere in the specified field, while the second example will only return results where the field is *exactly* (and only) the case-sensitive phrase "Letters Received".
+
 ## Sorting results
 
 The results set can be sorted by a given field by using the `sort=` parameter in combination with the field name and either `asc` or `desc`, separated by a space. For example, `sort=naId asc` (or, with URL encoding `sort=naId%20asc`). So, sorting the query for the keyword "navy" by NAIDs from lowest to highest is:
