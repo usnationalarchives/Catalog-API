@@ -8,9 +8,13 @@ Using the API for search and export
 
 - **[API basics](#api-basics)**
 - **[Pagination](#pagination)**
+- ⇢ **[Basic pagination](#basic-pagination)**
+- ⇢ **[Cursor-based pagination](#cursor-based-pagination)**
 - **[Search by identifier](#search-by-identifier)**
 - **[Keyword search](#keyword-search)**
 - **[Fielded search](#fielded-search)**
+- ⇢ **[Search operators](#search-operators)**
+- **[Field testing](#field-testing)**
 - **[Sorting results](#sorting-results)**
 - **[Refining the results](#refining-the-results)**
 - ⇢ **[Refining by type](#refining-by-type)**
@@ -130,7 +134,7 @@ The first query will return results that contain the case-insensitive phrase "le
 
 ## Field testing
 
-Sometimes, what you would like to search for is not the value of a field, but but the set of records which contain (or do not contain) a certain field. For that purpose, the API has a parameter that allows you to test for the existence of a field. For example, maybe you don't want to search the transcription field, but you want all records that have a transcription—or don't. Perhaps you want all items with a location, or all persons without a death date.
+Sometimes, what you would like to search for is not the value of a field, but the set of records which contain (or do not contain) a certain field. For that purpose, the API has a parameter that allows you to test for the existence of a field. For example, maybe you don't want to search on the transcription field, but you want all records that have a transcription—or don't. Perhaps you want all items with a location, or all persons without a death date.
 
 To do this, use the `exists=` and `not_exist=` parameters, with the field name you would like to test as the parameter value. You can use combine both parameters in the same query, and they can also have multiple values separated by a comma.
 
