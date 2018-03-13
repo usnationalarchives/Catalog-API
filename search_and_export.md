@@ -62,7 +62,7 @@ Once you have received the response from your initial query, there will be a `ne
 
 - [`https://catalog.archives.gov/api/v1/?cursorMark=AoMIP4AAAHCfku2F4gI1b2JqLTU3Mzc3ODU4LTU3Mzc3ODY1-10`](https://catalog.archives.gov/api/v1/?cursorMark=AoMIP4AAAHCfku2F4gI1b2JqLTU3Mzc3ODU4LTU3Mzc3ODY1-10)
 
-Continue to do so for each page of results in order to view the subsequent results. Tip: if you are trying to efficiently get to a certain result or group of results in a set, such as the 100,000th result, you can use `rows=10000` to quickly page through the results you do not want, but combine with [`resultFields=num`](#refining-by-field) (as described below) to return the minimum amount of data other than the `nextCursorMark` until you get to the page you want.
+Continue to do so for each page of results in order to view the subsequent results. Tip: if you are trying to efficiently get to a certain result or group of results in a set, such as the 100,000th result, you can use `rows=10000` to quickly page through the results you do not want, but combine with `resultFields=num` ([as described below](#refining-by-field)) to return the minimum amount of data other than the `nextCursorMark` until you get to the page you want.
 
 ## Search by identifier
 
