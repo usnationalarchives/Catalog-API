@@ -128,6 +128,21 @@ For example:
 
 The first query will return results that contain the case-insensitive phrase "letters received" anywhere in the specified field, while the second example will only return results where the field is *exactly* (and only) the case-sensitive phrase "Letters Received".
 
+## Field testing
+
+Sometimes, what you would like to search for is not the value of a field, but but the set of records which contain (or do not contain) a certain field. For that purpose, the API has a parameter that allows you to test for the existence of a field. For example, maybe you don't want to search the transcription field, but you want all records that have a transcription—or don't. Perhaps you want all items with a location, or all persons without a death date.
+
+To do this, use the `exists=` and `not_exist=` parameters, with the field name you would like to test as the parameter value. You can use combine both parameters in the same query, and they can also have multiple values separated by a comma.
+
+For example:
+
+- [`https://catalog.archives.gov/api/v1?exists=publicContributions.transcription.text`](https://catalog.archives.gov/api/v1?exists=publicContributions.transcription.text)
+- [`https://catalog.archives.gov/api/v1?type=person&not_exist=authority.person.deathDate`](https://catalog.archives.gov/api/v1?type=person&not_exist=authority.person.deathDate)
+
+The first query will return all records with the transcription field, while the second returns all person authority records without a death date. It's worthwhile to note that if you are using `not_exist=` to test for a field, you will usually need other parameters to return only the records that are in scope, and not just all the other types of records where that field is not applicable—in this case, we had to include`type=person` to not get back all descriptions, objects, and web results that also lack the death date field by definition.
+
+Also note that because NARA's data structure is designed to omit fields with a null value, this parameter tests whether or not a field is present, but is also effectively testing whether or not the field has an empty value (which are slightly different ideas). What this may mean conceptually depends on the field. To use the examples above, a person authority record which lacks the field for a death date may *meaningfully* lack that field—because the person has not died or their date of death is unknown, so the field is empty—or *non-meaningfully* lack the field—the field is not present simply because it is an optional field and the archivist did not supply it.
+
 ## Sorting results
 
 The results set can be sorted by a given field by using the `sort=` parameter in combination with the field name and either `asc` or `desc`, separated by a space. For example, `sort=naId asc` (or, with URL encoding `sort=naId%20asc`). So, sorting the query for the keyword "navy" by NAIDs from lowest to highest is:
