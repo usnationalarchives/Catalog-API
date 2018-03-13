@@ -127,8 +127,8 @@ In fielded search queries, there are additional operations that may be applied b
 
 For example:
 
-- [`https://catalog.archives.gov/api/v1?description.series.title="letters%20received"`](https://catalog.archives.gov/api/v1?description.series.title="letters received")
-- [`https://catalog.archives.gov/api/v1?description.series.title_is=Letters%20Received`](https://catalog.archives.gov/api/v1?description.series.title_is=Letters Received)
+- [`https://catalog.archives.gov/api/v1?description.series.title="letters received"`](https://catalog.archives.gov/api/v1?description.series.title="letters%20received")
+- [`https://catalog.archives.gov/api/v1?description.series.title_is=Letters Received`](https://catalog.archives.gov/api/v1?description.series.title_is=Letters%20Received)
 
 The first query will return results that contain the case-insensitive phrase "letters received" anywhere in the specified field, while the second example will only return results where the field is *exactly* (and only) the case-sensitive phrase "Letters Received".
 
@@ -151,7 +151,7 @@ Also note that because NARA's data structure is designed to omit fields with a n
 
 The results set can be sorted by a given field by using the `sort=` parameter in combination with the field name and either `asc` or `desc`, separated by a space. For example, `sort=naId asc` (or, with URL encoding `sort=naId%20asc`). So, sorting the query for the keyword "navy" by NAIDs from lowest to highest is:
 
-- [`https://catalog.archives.gov/api/v1/?q=navy&sort=naId%20asc`](https://catalog.archives.gov/api/v1/?q=navy&sort=naId asc)
+- [`https://catalog.archives.gov/api/v1/?q=navy&sort=naId asc`](https://catalog.archives.gov/api/v1/?q=navy&sort=naId%20asc)
 
 Fields are coded as either string, integer, or datetime, so that they should sort according to the correct logic.
 
