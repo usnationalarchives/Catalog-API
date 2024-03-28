@@ -18,9 +18,9 @@ Using the National Archives Catalog API
 
 ## What is the API?
 
-The [National Archives Catalog API](https://catalog.archives.gov/api/v2/api-docs) is a read–write web API for the online catalog for the National Archives.
+The [National Archives Catalog API](https://catalog.archives.gov/api/v2/api-docs/) is a read–write web API for the online catalog for the National Archives.
 
-The URL path for the API is: [`https://catalog.archives.gov/api/v2/api-docs`](https://catalog.archives.gov/api/v2/api-docs)
+The URL path for the API is: [`https://catalog.archives.gov/api/v2/api-docs`](https://catalog.archives.gov/api/v2/api-docs/)
 
 ## What data does the API contain?
 
