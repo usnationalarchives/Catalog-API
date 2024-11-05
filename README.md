@@ -61,7 +61,7 @@ The system imposes limits on how much data you can request (based on maximum row
 
 The current (and so far only) version of our catalog API is v1, which was released in December 2014. As improvements are made to the current version, we will try to ensure backwards compatibility.
 
-The base URL, [`https://catalog.archives.gov/api/v2/api-docs/`](https://catalog.archives.gov/api/v2/aoi-docs/), will always contain the API version.
+The base URL, [`https://catalog.archives.gov/api/v2/api-docs/`](https://catalog.archives.gov/api/v2/api-docs/), will always contain the API version.
 
 ## Does NARA have other datasets and APIs not included in the catalog API?
 
