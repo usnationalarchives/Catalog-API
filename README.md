@@ -1,5 +1,5 @@
-> <sup>**Quick links:** This page is a basic FAQ about NARA's online catalog API. If you would like to dive right in and play around, try the sandbox. <br/> Jump to advanced documentation: </sup><br/>
-> &nbsp; &nbsp; &nbsp; <sup>**[Search and export](search_and_export.md)** | **[Posting contributions](posting_contributions.md)** | **[Interactive API sandbox](https://catalog.archives.gov/interactivedocumentation)**</sup>
+> [!NOTE]
+> This ReadMe is a basic FAQ about NARA's legacy Catalog API v.1, which is no longer available. For information on the National Archives Catalog API v.2 and to request a Catalog API key, please see the Swagger documentation at [https://catalog.archives.gov/api/v2/api-docs/](https://catalog.archives.gov/api/v2/api-docs/). If you have any questions or concerns, please contact us by email at Catalog_API@nara.gov.
 
 Using the National Archives Catalog API
 ==================
