@@ -1,6 +1,3 @@
-> [!NOTE]
-> This ReadMe is a basic FAQ about NARA's legacy Catalog API v.1, which is no longer available. For information on the National Archives Catalog API v.2 and to request a Catalog API key, please see the Swagger documentation at [https://catalog.archives.gov/api/v2/api-docs/](https://catalog.archives.gov/api/v2/api-docs/). If you have any questions or concerns, please contact us by email at Catalog_API@nara.gov.
-
 Using the National Archives Catalog API
 ==================
 
@@ -18,26 +15,28 @@ Using the National Archives Catalog API
 
 ## What is the API?
 
-The [National Archives Catalog API](https://catalog.archives.gov/api/v2/api-docs/) is a read–write web API for the online catalog for the National Archives.
+The [National Archives Catalog API](https://catalog.archives.gov/api/v2/api-docs/) is a read–write web API for the online catalog for the National Archives. The Catalog API provides a structured way to search Description and Authority elements that exist within the Catalog dataset as an alternative to searching directly within the [Catalog](https://catalog.archives.gov/) user interface.
 
 The URL path for the API is: [`https://catalog.archives.gov/api/v2/api-docs`](https://catalog.archives.gov/api/v2/api-docs/)
 
 ## What data does the API contain?
 
-The National Archives Catalog API contains all:
+The National Archives Catalog API contains:
 
-- Archival description metadata
-- Authority record (persons, organizations, geographic references, topical subjects, and specific records types) metadata
+- All available archival descriptions
+- Authority record metadata (persons, organizations, geographic references, topical subjects, and specific records types)
 - Digital object metadata (including technical metadata)
-- Public contributions to the catalog (like tags and transcriptions)
-- Metadata for crawled web pages of archives.gov and presidential libraries
-- Some metadata for user accounts
+- Public contributions to the catalog (tags, transcriptions, comments)
+- Extracted text metadata (such as optical character recognition or OCR text)
+- Limited metadata for user accounts
 
 ## What can the API do?
 
 The API's main functions include querying for metadata, exporting metadata in bulk, and posting tags and transcriptions to records.
 
 When searching, you may return the full metadata for each record, or specify one or more specific fields. You can search by keyword and/or by any combination of field values, and apply sorting.
+
+The API may also be used to facilitate bulk downloads of records from the National Archives Catalog.
 
 ## How can I use NARA's data?
 
@@ -49,17 +48,48 @@ For more information, please read [NARA's FAQ on copyright](http://www.archives.
 
 ## How do I get access to the API?
 
-We strive for openness as much as possible in our API. That means that you can get started querying the API right now without any account or API key. For system performance reasons, there are some basic limits on how many rows or total results you can request, as well as the rate at which you can query—but you can create an account in order to increase those limits.
+To request a Catalog API key, please send an email to Catalog_API@nara.gov with your name and the email address you would like associated with your key. You may request a read-only key which will allow you to query the National Archives Catalog dataset, or a read/write key which will allow you to both query the dataset and write or edit contributions to the Catalog. If you are requesting a read/write key, you must have an active Catalog account.
 
-You will need to create an account and log in to perform write actions like tagging and transcription, which are attributed to your account. You are contributing to the same records and using the same accounts as in the [NARA catalog UI](https://catalog.archives.gov/).
+To set up a Catalog account, you may visit the [Catalog](https://catalog.archives.gov/) and click Log in/Sign Up in the top right corner. Please be sure to use the same email you wish to have associated with your Catalog API key.
+
+### How to run your first API call:
+**Step 1: Open the Command-Line Interface (CLI)**
++ **Windows:** Press Windows + R, type cmd, and hit Enter to open the Command Prompt.
++ **Mac:** Press Command + Space, type Terminal, and hit Enter.
++ **Linux:** Open the Terminal from your system's applications menu or press Ctrl + Alt + T.
+
+**Step 2: Install curl (if it's not already installed)**
++ **Windows:** Recent versions of Windows include curl by default. To check, type curl --version and press Enter.
++ **Mac and Linux:** curl is typically pre-installed. To check, type curl --version in the terminal and press Enter.
+
+**Step 3: Get your API Key**
++ Make sure you have your API key that was provided by our Catalog engineers. You will replace YOUR_API_KEY in the command with the API key issued by our Catalog engineers.
+
+**Step 4: Run the curl Command**
++ Once you have curl installed and your API key ready, you can run the following command in the terminal. 
+```
+curl --location --request GET “https://catalog.archives.gov/api/v2/records/search?q=constitution" --header "Content-Type: application/json" --header "x-api-key: YOUR_API_KEY"
+```
+
+**Step 5: View the Response**
++ After running the command, you should see a response from the API printed in the terminal. It will be a JSON-formatted output that includes the search results.
+
+**Step 6: Saving the Output (Optional)**
++ If you want to save the output to a file instead of viewing it in the terminal, you can modify the command like this:
+```
+curl --location --request GET "https://catalog.archives.gov/api/v2/records/search?q=constitution" --header "Content-Type: application/json" --header "x-api-key: YOUR_API_KEY" -o output.json
+```
++ The output.json command will save the results to a JSON file in the current directory.
 
 ## What are the limits imposed?
 
-The system imposes limits on how much data you can request (based on maximum row and/or offset limits) and how fast you can request it (based on maximum number of queries per IP/user in a given time). The specific limits are different depending on the type of account (not logged in, registered user/moderator, or power user) and are not yet defined, but if you encounter a limit, you will receive a 400 error with a message describing the issue.
+To ensure consistent system and API availability and performance, NARA limits the number of Catalog API requests to a default rate of 10,000 queries per month per API key. Exceeding this limit will cause the API key to be temporarily blocked until the first of the following month. Your API key query rate limit will automatically reset and be renewed on the first of every month. 
+
+Most use cases and research needs can be met by the default API limit. If your research or development efforts require a higher limit, please contact Catalog_API@nara.gov with your use case/research need and justification. NARA staff determines the issuance of a higher limit based on Catalog API performance.
 
 ## What is the current version?
 
-The current (and so far only) version of our catalog API is v1, which was released in December 2014. As improvements are made to the current version, we will try to ensure backwards compatibility.
+The current version of our catalog API is v2, which was released in September 2022. As improvements are made to the current version, we will try to ensure backwards compatibility.
 
 The base URL, [`https://catalog.archives.gov/api/v2/api-docs/`](https://catalog.archives.gov/api/v2/api-docs/), will always contain the API version.
 
@@ -71,5 +101,4 @@ NARA's [Office of the Federal Register](federalregister.gov) also has an API for
 
 ## Where can I report issues?
 
-We welcome reports of issues, whether they are bugs in the system, ideas for improvements, or problems with the underlying data. Please report them using the the GitHub issue tracker [for this repository](https://github.com/usnationalarchives/Catalog-API/issues), or by email to Catalog_API@nara.gov.
-
+We welcome reports of issues, whether they are bugs in the system, ideas for improvements, or problems with the underlying data. Please report them using the GitHub issue tracker [for this repository](https://github.com/usnationalarchives/Catalog-API/issues), or by email to Catalog_API@nara.gov.
