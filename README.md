@@ -15,7 +15,7 @@ Using the National Archives Catalog API
 
 ## What is the API?
 
-The [National Archives Catalog API](https://catalog.archives.gov/api/v2/api-docs/) is a read–write web API for the online catalog for the National Archives. The Catalog API provides a structured way to search Description and Authority elements that exist within the Catalog dataset as an alternative to searching directly within the [Catalog](https://catalog.archives.gov/) user interface.
+The [National Archives Catalog API](https://www.archives.gov/research/catalog/help/api) is a read–write web API for the online catalog for the National Archives. The Catalog API provides a structured way to search Description and Authority elements that exist within the Catalog dataset as an alternative to searching directly within the [Catalog](https://catalog.archives.gov/) user interface.
 
 The URL path for the API is: [`https://catalog.archives.gov/api/v2/api-docs`](https://catalog.archives.gov/api/v2/api-docs/)
 
@@ -48,14 +48,14 @@ For more information, please read [NARA's FAQ on copyright](http://www.archives.
 
 ## How do I get access to the API?
 
-To request a Catalog API key, please send an email to Catalog_API@nara.gov with your name and the email address you would like associated with your key. You may request a read-only key which will allow you to query the National Archives Catalog dataset, or a read/write key which will allow you to both query the dataset and write or edit contributions to the Catalog. If you are requesting a read/write key, you must have an active Catalog account.
+To request a Catalog API key, please send an email to Catalog_API@nara.gov with your name and the email address you would like associated with your key. You may request a read-only key which will allow you to query the National Archives Catalog dataset, or a read-write key which will allow you to both query the dataset and write or edit contributions (tags, transcriptions, comments) to the Catalog. If you are requesting a read-write key, you must have an active Catalog account.
 
 To set up a Catalog account, you may visit the [Catalog](https://catalog.archives.gov/) and click Log in/Sign Up in the top right corner. Please be sure to use the same email you wish to have associated with your Catalog API key.
 
 ### How to run your first API call:
 **Step 1: Open the Command-Line Interface (CLI)**
-+ **Windows:** Press Windows + R, type cmd, and hit Enter to open the Command Prompt.
-+ **Mac:** Press Command + Space, type Terminal, and hit Enter.
++ **Windows:** Press Windows + R, type cmd, and press Enter to open the Command Prompt.
++ **Mac:** Press Command + Space, type Terminal, and press Enter.
 + **Linux:** Open the Terminal from your system's applications menu or press Ctrl + Alt + T.
 
 **Step 2: Install curl (if it's not already installed)**
