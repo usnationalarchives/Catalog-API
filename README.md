@@ -68,7 +68,7 @@ To set up a Catalog account, you may visit the [Catalog](https://catalog.archive
 **Step 4: Run the curl Command**
 + Once you have curl installed and your API key ready, you can run the following command in the terminal. 
 ```
-curl --location --request GET “https://catalog.archives.gov/api/v2/records/search?q=constitution" --header "Content-Type: application/json" --header "x-api-key: YOUR_API_KEY"
+curl --location --request GET "https://catalog.archives.gov/api/v2/records/search?q=constitution" --header "Content-Type: application/json" --header "x-api-key: YOUR_API_KEY"
 ```
 
 **Step 5: View the Response**
