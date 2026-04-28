@@ -105,12 +105,12 @@ Not sure which script you need? Here's a quick guide:
 
 | **Your Goal** | **Use This Script** | **More Info** |
 |---|---|---|
-| **One tool for everything** — Interactive menu for any scenario | `combinedDigitalObjectScript.py` ⭐ | [Full Documentation](README_combinedDigitalObjectScript.md) |
-| Download one record + create a PDF from the images | `DownloadObjects_CreatePDF_SingleRecord.py` | [Full Documentation](README_DownloadObjects_CreatePDF_SingleRecord.md) |
-| Download one record without creating a PDF | `DownloadObjects_NoPDF_SingleRecord.py` | [Full Documentation](README_DownloadObjects_NoPDF_SingleRecord.md) |
-| Download all child records in a series (e.g., all files in a series) | `DownloadObjects_NoPDF_AllChildRecords.py` | [Full Documentation](README_DownloadObjects_NoPDF_AllChildRecords.md) |
-| Just get a list of object URLs without downloading | `GenerateObjectURLs_NoDownload_AllChildRecords.py` | [Full Documentation](README_GenerateObjectURLs_NoDownload_AllChildRecords.md) |
-| Download results from a keyword search | `DownloadObjects_anySearch.py` | [Full Documentation](README_DownloadObjects_anySearch.md) |
+| **One tool for everything** — Interactive menu for any scenario | `combinedDigitalObjectScript.py` ⭐ | [Full Documentation](readme/README_combinedDigitalObjectScript.md) |
+| Download one record + create a PDF from the images | `DownloadObjects_CreatePDF_SingleRecord.py` | [Full Documentation](readme/README_DownloadObjects_CreatePDF_SingleRecord.md) |
+| Download one record without creating a PDF | `DownloadObjects_NoPDF_SingleRecord.py` | [Full Documentation](readme/README_DownloadObjects_NoPDF_SingleRecord.md) |
+| Download all child records in a series (e.g., all files in a series) | `DownloadObjects_NoPDF_AllChildRecords.py` | [Full Documentation](readme/README_DownloadObjects_NoPDF_AllChildRecords.md) |
+| Just get a list of object URLs without downloading | `GenerateObjectURLs_NoDownload_AllChildRecords.py` | [Full Documentation](readme/README_GenerateObjectURLs_NoDownload_AllChildRecords.md) |
+| Download results from a keyword search | `DownloadObjects_anySearch.py` | [Full Documentation](readme/README_DownloadObjects_anySearch.md) |
 | Download objects listed in CSV files | `DownloadObjects_FromCSV.py` | [Full Documentation](scripts/README_DownloadObjects_FromCSV.md) |
 
 ## Script Descriptions
@@ -129,7 +129,7 @@ Not sure which script you need? Here's a quick guide:
 - **Resume support**: Interrupted downloads can continue where they left off
 - **Smart organization**: Files organized by NAID in clearly-named directories
 - **All specialized features included**: Natural sorting, image compression, multi-page TIFF support
-- Complete documentation: [README_combinedDigitalObjectScript.md](README_combinedDigitalObjectScript.md)
+- Complete documentation: [README_combinedDigitalObjectScript.md](readme/README_combinedDigitalObjectScript.md)
 
 **To run:** `python scripts/combinedDigitalObjectScript.py`
 
@@ -157,7 +157,7 @@ Downloads all digital objects from a **single record** and automatically creates
 - Automatically converts TIF/JP2 images to JPG
 - Compresses images to reduce file size
 - Creates a single merged PDF file (or multiple if >500MB)
-- Complete documentation: [README_DownloadObjects_CreatePDF_SingleRecord.md](README_DownloadObjects_CreatePDF_SingleRecord.md)
+- Complete documentation: [README_DownloadObjects_CreatePDF_SingleRecord.md](readme/README_DownloadObjects_CreatePDF_SingleRecord.md)
 
 **To run:** `python DownloadObjects_CreatePDF_SingleRecord.py`
 
@@ -173,7 +173,7 @@ Downloads all digital objects from a **single record** without creating a PDF.
 - Downloads digital objects for a specific NAID
 - Keeps files in their original formats (JPG, TIF, PDF, etc.)
 - Organizes files into a folder named after the NAID
-- Complete documentation: [README_DownloadObjects_NoPDF_SingleRecord.md](README_DownloadObjects_NoPDF_SingleRecord.md)
+- Complete documentation: [README_DownloadObjects_NoPDF_SingleRecord.md](readme/README_DownloadObjects_NoPDF_SingleRecord.md)
 
 **To run:** `python DownloadObjects_NoPDF_SingleRecord.py`
 
@@ -191,7 +191,7 @@ Downloads digital objects for **all child records within a parent record** (e.g.
 - Handles API pagination automatically
 - Great for large collections with hundreds or thousands of items
 - Learn more about record relationships: [National Archives Catalog Data Model](https://www.archives.gov/research/data-model)
-- Complete documentation: [README_DownloadObjects_NoPDF_AllChildRecords.md](README_DownloadObjects_NoPDF_AllChildRecords.md)
+- Complete documentation: [README_DownloadObjects_NoPDF_AllChildRecords.md](readme/README_DownloadObjects_NoPDF_AllChildRecords.md)
 
 **To run:** `python DownloadObjects_NoPDF_AllChildRecords.py`
 
@@ -209,7 +209,7 @@ Downloads digital objects for **all child records within a parent record** (e.g.
 - Handles large result sets (auto-creates new CSV after 500,000 rows)
 - Fast—no time spent downloading files
 - Useful for reviewing what's available before committing to a large download
-- Complete documentation: [README_GenerateObjectURLs_NoDownload_AllChildRecords.md](README_GenerateObjectURLs_NoDownload_AllChildRecords.md)
+- Complete documentation: [README_GenerateObjectURLs_NoDownload_AllChildRecords.md](readme/README_GenerateObjectURLs_NoDownload_AllChildRecords.md)
 
 **Note (paired workflow):** This script is often used together with a CSV downloader. First run `GenerateObjectURLs_NoDownload_AllChildRecords.py` to produce `ObjectsList_*.csv` files (a preview of available object URLs), then use `DownloadObjects_FromCSV.py` to download those URLs. See the downloader documentation for usage and best practices: [scripts/README_DownloadObjects_FromCSV.md](scripts/README_DownloadObjects_FromCSV.md)
 
@@ -230,7 +230,7 @@ Downloads digital objects using **custom keyword or API search parameters**.
 - Downloads all matching results
 - Each record's objects stored in separate folders
 - Flexible querying for complex research needs
-- Complete documentation: [README_DownloadObjects_anySearch.md](README_DownloadObjects_anySearch.md)
+- Complete documentation: [README_DownloadObjects_anySearch.md](readme/README_DownloadObjects_anySearch.md)
 
 **To run:** `python DownloadObjects_anySearch.py`
 
