@@ -1,4 +1,4 @@
-# Combined Digital Object Script - Complete Documentation
+# Combined Digital Object Script
 
 ## Contents
 Click below to go directly to the section you need.
