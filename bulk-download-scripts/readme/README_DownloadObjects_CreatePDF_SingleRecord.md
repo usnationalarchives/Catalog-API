@@ -1,4 +1,4 @@
-# Download Objects Create PDF Single Record Script
+# Download Objects from Single Record and Create PDF Script
 
 ## Contents
 Click below to go directly to the section you need.
