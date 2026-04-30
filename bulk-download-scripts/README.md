@@ -4,18 +4,17 @@
 Click below to go directly to the section you need.
 
 - **[Overview](#overview)**
-- **[Available Scripts](#available-scripts)**
 - **[Prerequisites](#prerequisites)**
 - **[Features](#features)**
 - **[Installation and Setup](#installation-and-setup)**
 - **[Choosing the Right Script](#choosing-the-right-script)**
 - **[Script Descriptions](#script-descriptions)**
-  - **[Combined Digital Object Script (All-in-One Tool)](#-combined-digital-object-script-all-in-one-tool)**
-  - **[Download Objects Create PDF Single Record](#-download-objects-create-pdf-single-record)**
-  - **[Download Objects No PDF Single Record](#-download-objects-no-pdf-single-record)**
-  - **[Download Objects No PDF All Child Records](#-download-objects-no-pdf-all-child-records)**
-  - **[Generate Object URLs No Download All Child Records](#-generate-object-urls-no-download-all-child-records)**
-  - **[Download Objects Any Search](#-download-objects-any-search)**
+  - [Combined Digital Object Script (All-in-One Tool)](#-combined-digital-object-script-all-in-one-tool)
+  - [Download Objects Create PDF Single Record](#-download-objects-create-pdf-single-record)
+  - [Download Objects No PDF Single Record](#-download-objects-no-pdf-single-record)
+  - [Download Objects No PDF All Child Records](#-download-objects-no-pdf-all-child-records)
+  - [Generate Object URLs No Download All Child Records](#-generate-object-urls-no-download-all-child-records)
+  - [Download Objects Any Search](#-download-objects-any-search)
 - **[Troubleshooting](#troubleshooting)**
 - **[Getting Help](#getting-help)**
 - **[Attribution and License](#attribution-and-license)**
@@ -364,6 +363,7 @@ If you discover a bug or have a feature request, you can also report it on the [
 These scripts are provided by the **National Archives Catalog API Team**. They may be modified and used according to your needs and the license information listed below.
 
 **Created by:** U.S. National Archives and Records Administration, National Archives Catalog API Team
+
 **For questions or feedback**, please contact: [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov)
 
 ## Public Domain
