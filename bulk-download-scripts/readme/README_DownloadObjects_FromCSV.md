@@ -1,4 +1,4 @@
-# Download Objects From CSV (Rate-Limited)
+# Download Objects From CSV
 
 ## Contents
 Click below to go directly to the section you need.
