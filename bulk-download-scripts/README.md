@@ -9,11 +9,11 @@ Click below to go directly to the section you need.
 - **[Installation and Setup](#installation-and-setup)**
 - **[Choosing the Right Script](#choosing-the-right-script)**
 - **[Script Descriptions](#script-descriptions)**
-  - [Combined Digital Object Script (All-in-One Tool)](#-combined-digital-object-script-all-in-one-tool)
-  - [Download Objects Create PDF Single Record](#-download-objects-create-pdf-single-record)
-  - [Download Objects No PDF Single Record](#-download-objects-no-pdf-single-record)
-  - [Download Objects No PDF All Child Records](#-download-objects-no-pdf-all-child-records)
-  - [Generate Object URLs No Download All Child Records](#-generate-object-urls-no-download-all-child-records)
+  - [Combined Digital Object Script](#-combined-digital-object-script)
+  - [Download Objects from Single Record and Create PDF](#-download-objects-from-single-record-and-create-pdf)
+  - [Download Objects from Single Record with No PDF](#-download-objects-from-single-record-with-no-pdf)
+  - [Download Objects from All Child Records with No PDF](#-download-objects-from-all-child-records-with-no-pdf)
+  - [Generate Object URLs for All Child Records with No Download](#-generate-object-urls-for-all-child-records-with-no-download)
   - [Download Objects Any Search](#-download-objects-any-search)
 - **[Troubleshooting](#troubleshooting)**
 - **[Getting Help](#getting-help)**
@@ -115,7 +115,7 @@ Not sure which script you need? Here's a quick guide:
 
 ## Script Descriptions
 
-### ⭐ **<ins>Combined Digital Object Script (All-in-One Tool)</ins>**
+### ⭐ **<ins>Combined Digital Object Script</ins>**
 
 **The all-in-one solution** with an interactive menu that handles every download scenario in a single script.
 
@@ -146,7 +146,7 @@ Not sure which script you need? Here's a quick guide:
 
 ---
 
-### 🚀 **<ins>Download Objects Create PDF Single Record</ins>**
+### 🚀 **<ins>Download Objects from Single Record and Create PDF</ins>**
 
 Downloads all digital objects from a **single record** and automatically creates a consolidated PDF from the images.
 
@@ -163,7 +163,7 @@ Downloads all digital objects from a **single record** and automatically creates
 
 ---
 
-### 🚀 **<ins>Download Objects No PDF Single Record</ins>**
+### 🚀 **<ins>Download Objects from Single Record with No PDF</ins>**
 
 Downloads all digital objects from a **single record** without creating a PDF.
 
@@ -179,7 +179,7 @@ Downloads all digital objects from a **single record** without creating a PDF.
 
 ---
 
-### 🚀 **<ins>Download Objects No PDF All Child Records</ins>**
+### 🚀 **<ins>Download Objects from All Child Records with No PDF</ins>**
 
 Downloads digital objects for **all child records within a parent record** (e.g., all file units within a series).
 
@@ -197,7 +197,7 @@ Downloads digital objects for **all child records within a parent record** (e.g.
 
 ---
 
-### 🚀 **<ins>Generate Object URLs No Download All Child Records</ins>**
+### 🚀 **<ins>Generate Object URLs for All Child Records with No Download</ins>**
 
 **Generates a list of object URLs** (in CSV format) for all child records within a parent, **without downloading the actual files**.
 
