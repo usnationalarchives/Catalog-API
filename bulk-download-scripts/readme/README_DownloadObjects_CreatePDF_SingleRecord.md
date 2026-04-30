@@ -1,16 +1,16 @@
 # Download Objects Create PDF Single Record Script
 
-## Table of Contents
+## Contents
 Click below to go directly to the section you need.
 
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Features](#features)
-- [Usage](#usage)
-- [Script Breakdown](#script-breakdown)
-- [Output](#output)
-- [Notes](#notes)
-- [Troubleshooting](#troubleshooting)
+- **[Overview](#overview)**
+- **[Prerequisites](#prerequisites)**
+- **[Features](#features)**
+- **[Usage](#usage)**
+- **[Script Breakdown](#script-breakdown)**
+- **[Output](#output)**
+- **[Notes](#notes)**
+- **[Troubleshooting](#troubleshooting)**
 
 ## Overview
 
@@ -39,8 +39,8 @@ This Python script downloads all digital objects associated with a single Nation
 
 ## Usage
 
-#### 1. Install Dependencies
-Run the following command in your terminal to install the required dependencies:
+#### 1. Install Required Packages
+Run the following command in your terminal to install the required packages:
 ```bash
 pip install requests PyPDF2 Pillow img2pdf
 ```
