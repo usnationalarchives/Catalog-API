@@ -108,10 +108,10 @@ Not sure which script you need? Here's a quick guide:
 | **One tool for everything** — Interactive menu for any scenario | `combinedDigitalObjectScript.py` ⭐ | [Full Documentation](readme/README_combinedDigitalObjectScript.md) |
 | Download one record + create a PDF from the images | `DownloadObjects_CreatePDF_SingleRecord.py` | [Full Documentation](readme/README_DownloadObjects_CreatePDF_SingleRecord.md) |
 | Download one record without creating a PDF | `DownloadObjects_NoPDF_SingleRecord.py` | [Full Documentation](readme/README_DownloadObjects_NoPDF_SingleRecord.md) |
-| Download all child records in a series (e.g., all files in a series) | `DownloadObjects_NoPDF_AllChildRecords.py` | [Full Documentation](readme/README_DownloadObjects_NoPDF_AllChildRecords.md) |
+| Download all child records in a description (e.g., all file units in a series) | `DownloadObjects_NoPDF_AllChildRecords.py` | [Full Documentation](readme/README_DownloadObjects_NoPDF_AllChildRecords.md) |
 | Just get a list of object URLs without downloading | `GenerateObjectURLs_NoDownload_AllChildRecords.py` | [Full Documentation](readme/README_GenerateObjectURLs_NoDownload_AllChildRecords.md) |
 | Download results from a keyword search | `DownloadObjects_anySearch.py` | [Full Documentation](readme/README_DownloadObjects_anySearch.md) |
-| Download objects listed in CSV files | `DownloadObjects_FromCSV.py` | [Full Documentation](scripts/README_DownloadObjects_FromCSV.md) |
+| Download objects listed in CSV files | `DownloadObjects_FromCSV.py` | [Full Documentation](readme/README_DownloadObjects_FromCSV.md) |
 
 ## Script Descriptions
 
