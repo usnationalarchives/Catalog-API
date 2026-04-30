@@ -330,9 +330,7 @@ Downloads digital objects using **custom keyword or API search parameters**.
 
 ### Can't Find What You Need?
 1. **Check the specific script's README** - Each script has its own detailed documentation with examples
-2. **Review this main README** - Most answers are here!
-3. **Check the Troubleshooting section above** - Common issues and solutions
-4. **Review Important API Usage Notes** - Information about limits, storage, and best practices
+2. **Check the Troubleshooting section above** - Common issues and solutions
 
 ### Still Having Problems?
 Contact the National Archives Catalog API team for technical support:
@@ -342,6 +340,7 @@ Contact the National Archives Catalog API team for technical support:
   - What error message you received (if any)
   - The NAID or search term you were using (if not sensitive)
   - Your operating system (Windows, Mac, Linux)
+  - Screenshots (if needed)
   - Steps you've already tried
 
 ### Technical Resources and Documentation
