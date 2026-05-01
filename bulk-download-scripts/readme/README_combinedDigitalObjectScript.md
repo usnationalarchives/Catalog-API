@@ -53,7 +53,7 @@ This script provides a **menu-driven interface** that guides you through your op
   - **Default limit**: 10,000 API queries per month
   - **Important**: Do not share your API key or publish it to public repositories (like GitHub). If a key is compromised, contact [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov) to request a new one.
   - Keys are deactivated after 12 months of inactivity
-  - See [API for the National Archives Catalog](https://www.archives.gov/research/catalog/help/api) for full Terms of Use.
+  - See [API for the National Archives Catalog](https://www.archives.gov/research/catalog/help/api) for full **API Terms of Use**.
 
 ### Storage and Hardware
 - **Disk Space**: Bulk downloads consume significant storage space
