@@ -37,7 +37,7 @@ These Python scripts are designed to help you download archival records and digi
   - **Default limit**: 10,000 API queries per month
   - **Important**: Do not share your API key or publish it to public repositories (like GitHub). If a key is compromised, contact [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov) to request a new one.
   - Keys are deactivated after 12 months of inactivity
-  - See [API for the National Archives Catalog](https://www.archives.gov/research/catalog/help/api) for full Terms of Use.
+  - See [API for the National Archives Catalog](https://www.archives.gov/research/catalog/help/api) for full **API Terms of Use**.
 
 ### Storage and Hardware
 - **Disk Space**: Bulk downloads consume significant storage space
@@ -259,8 +259,8 @@ Downloads digital objects using **custom keyword or API search parameters**.
 - Consider using external storage to preserve your downloaded materials
 
 **Terms of Use**:
-- Access to or use of the API or its content constitutes acceptance of the Terms of Use.
-- See [API for the National Archives Catalog](https://www.archives.gov/research/catalog/help/api) for full Terms of Use.
+- Access to or use of the API or its content constitutes acceptance of the API Terms of Use.
+- See [API for the National Archives Catalog](https://www.archives.gov/research/catalog/help/api) for full **API Terms of Use**.
 
 
 ## Troubleshooting
