@@ -1,24 +1,23 @@
 # National Archives Catalog API Bulk Download Python Scripts
 
-## Table of Contents
+## Contents
 Click below to go directly to the section you need.
 
-- [Overview](#overview)
-- [Available Scripts](#available-scripts)
-- [Prerequisites](#prerequisites)
-- [Features](#features)
-- [Installation and Setup](#installation-and-setup)
-- [Choosing the Right Script](#choosing-the-right-script)
-- [Script Descriptions](#script-descriptions)
-  - [Combined Digital Object Script (All-in-One Tool)](#-combined-digital-object-script-all-in-one-tool)
-  - [Download Objects Create PDF Single Record](#-download-objects-create-pdf-single-record)
-  - [Download Objects No PDF Single Record](#-download-objects-no-pdf-single-record)
-  - [Download Objects No PDF All Child Records](#-download-objects-no-pdf-all-child-records)
-  - [Generate Object URLs No Download All Child Records](#-generate-object-urls-no-download-all-child-records)
+- **[Overview](#overview)**
+- **[Prerequisites](#prerequisites)**
+- **[Features](#features)**
+- **[Installation and Setup](#installation-and-setup)**
+- **[Choosing the Right Script](#choosing-the-right-script)**
+- **[Script Descriptions](#script-descriptions)**
+  - [Combined Digital Object Script](#-combined-digital-object-script)
+  - [Download Objects from Single Record and Create PDF](#-download-objects-from-single-record-and-create-pdf)
+  - [Download Objects from Single Record with No PDF](#-download-objects-from-single-record-with-no-pdf)
+  - [Download Objects from All Child Records with No PDF](#-download-objects-from-all-child-records-with-no-pdf)
+  - [Generate Object URLs for All Child Records with No Download](#-generate-object-urls-for-all-child-records-with-no-download)
   - [Download Objects Any Search](#-download-objects-any-search)
-- [Troubleshooting](#troubleshooting)
-- [Getting Help](#getting-help)
-- [License and Attribution](#license-and-attribution)
+- **[Troubleshooting](#troubleshooting)**
+- **[Getting Help](#getting-help)**
+- **[Attribution and License](#attribution-and-license)**
 
 ## Overview
 
@@ -36,8 +35,9 @@ These Python scripts are designed to help you download archival records and digi
 - **National Archives Catalog API Key** - Obtain one by emailing [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov)
   - Store this key securely as it authenticates your requests to the API
   - **Default limit**: 10,000 API queries per month
-  - **Important**: Do not share your API key or publish it to public repositories (like GitHub). If a key is compromised, contact Catalog_API@nara.gov to request a new one.
+  - **Important**: Do not share your API key or publish it to public repositories (like GitHub). If a key is compromised, contact [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov) to request a new one.
   - Keys are deactivated after 12 months of inactivity
+  - See [API for the National Archives Catalog](https://www.archives.gov/research/catalog/help/api) for full Terms of Use.
 
 ### Storage and Hardware
 - **Disk Space**: Bulk downloads consume significant storage space
@@ -108,14 +108,14 @@ Not sure which script you need? Here's a quick guide:
 | **One tool for everything** — Interactive menu for any scenario | `combinedDigitalObjectScript.py` ⭐ | [Full Documentation](readme/README_combinedDigitalObjectScript.md) |
 | Download one record + create a PDF from the images | `DownloadObjects_CreatePDF_SingleRecord.py` | [Full Documentation](readme/README_DownloadObjects_CreatePDF_SingleRecord.md) |
 | Download one record without creating a PDF | `DownloadObjects_NoPDF_SingleRecord.py` | [Full Documentation](readme/README_DownloadObjects_NoPDF_SingleRecord.md) |
-| Download all child records in a series (e.g., all files in a series) | `DownloadObjects_NoPDF_AllChildRecords.py` | [Full Documentation](readme/README_DownloadObjects_NoPDF_AllChildRecords.md) |
+| Download all child records in a description (e.g., all file units in a series) | `DownloadObjects_NoPDF_AllChildRecords.py` | [Full Documentation](readme/README_DownloadObjects_NoPDF_AllChildRecords.md) |
 | Just get a list of object URLs without downloading | `GenerateObjectURLs_NoDownload_AllChildRecords.py` | [Full Documentation](readme/README_GenerateObjectURLs_NoDownload_AllChildRecords.md) |
 | Download results from a keyword search | `DownloadObjects_anySearch.py` | [Full Documentation](readme/README_DownloadObjects_anySearch.md) |
-| Download objects listed in CSV files | `DownloadObjects_FromCSV.py` | [Full Documentation](scripts/README_DownloadObjects_FromCSV.md) |
+| Download objects listed in CSV files | `DownloadObjects_FromCSV.py` | [Full Documentation](readme/README_DownloadObjects_FromCSV.md) |
 
 ## Script Descriptions
 
-### ⭐ **<ins>Combined Digital Object Script (All-in-One Tool)</ins>**
+### ⭐ **<ins>Combined Digital Object Script</ins>**
 
 **The all-in-one solution** with an interactive menu that handles every download scenario in a single script.
 
@@ -146,7 +146,7 @@ Not sure which script you need? Here's a quick guide:
 
 ---
 
-### 🚀 **<ins>Download Objects Create PDF Single Record</ins>**
+### 🚀 **<ins>Download Objects from Single Record and Create PDF</ins>**
 
 Downloads all digital objects from a **single record** and automatically creates a consolidated PDF from the images.
 
@@ -163,7 +163,7 @@ Downloads all digital objects from a **single record** and automatically creates
 
 ---
 
-### 🚀 **<ins>Download Objects No PDF Single Record</ins>**
+### 🚀 **<ins>Download Objects from Single Record with No PDF</ins>**
 
 Downloads all digital objects from a **single record** without creating a PDF.
 
@@ -179,7 +179,7 @@ Downloads all digital objects from a **single record** without creating a PDF.
 
 ---
 
-### 🚀 **<ins>Download Objects No PDF All Child Records</ins>**
+### 🚀 **<ins>Download Objects from All Child Records with No PDF</ins>**
 
 Downloads digital objects for **all child records within a parent record** (e.g., all file units within a series).
 
@@ -197,7 +197,7 @@ Downloads digital objects for **all child records within a parent record** (e.g.
 
 ---
 
-### 🚀 **<ins>Generate Object URLs No Download All Child Records</ins>**
+### 🚀 **<ins>Generate Object URLs for All Child Records with No Download</ins>**
 
 **Generates a list of object URLs** (in CSV format) for all child records within a parent, **without downloading the actual files**.
 
@@ -257,6 +257,11 @@ Downloads digital objects using **custom keyword or API search parameters**.
 - Plan your downloads in advance to stay within monthly query limits
 - Use the `GenerateObjectURLs_NoDownload_AllChildRecords.py` script to preview what's available before downloading
 - Consider using external storage to preserve your downloaded materials
+
+**Terms of Use**:
+- Access to or use of the API or its content constitutes acceptance of the Terms of Use.
+- See [API for the National Archives Catalog](https://www.archives.gov/research/catalog/help/api) for full Terms of Use.
+
 
 ## Troubleshooting
 
@@ -325,9 +330,7 @@ Downloads digital objects using **custom keyword or API search parameters**.
 
 ### Can't Find What You Need?
 1. **Check the specific script's README** - Each script has its own detailed documentation with examples
-2. **Review this main README** - Most answers are here!
-3. **Check the Troubleshooting section above** - Common issues and solutions
-4. **Review Important API Usage Notes** - Information about limits, storage, and best practices
+2. **Check the Troubleshooting section above** - Common issues and solutions
 
 ### Still Having Problems?
 Contact the National Archives Catalog API team for technical support:
@@ -337,15 +340,16 @@ Contact the National Archives Catalog API team for technical support:
   - What error message you received (if any)
   - The NAID or search term you were using (if not sensitive)
   - Your operating system (Windows, Mac, Linux)
+  - Screenshots (if needed)
   - Steps you've already tried
 
 ### Technical Resources and Documentation
 
 **Official Documentation:**
-- [National Archives Catalog API Documentation](https://www.archives.gov/data/api)
+- [API for the National Archives Catalog](https://www.archives.gov/data/api)
 - [National Archives Catalog Data Model](https://www.archives.gov/research/data-model) - Understand record relationships and hierarchy
 - [GitHub Repository](https://github.com/usnationalarchives/catalog-api) - Source code and additional resources
-- [API Swagger Documentation](https://catalog.archives.gov/api/v2/docs/) - Interactive API documentation and testing
+- [API Documentation](https://catalog.archives.gov/api/v2/docs/) - Interactive API documentation and testing
 
 **Data Access:**
 - [AWS Registry of Open Data - National Archives Catalog](https://registry.opendata.aws/national-archives-catalog/) - For bulk dataset access
@@ -353,10 +357,25 @@ Contact the National Archives Catalog API team for technical support:
 **Reporting Issues:**
 If you discover a bug or have a feature request, you can also report it on the [GitHub Issues page](https://github.com/usnationalarchives/catalog-api/issues)
 
-## License and Attribution
+## Attribution and License
 
-These scripts are provided by the **National Archives Catalog API Team**. Feel free to modify and use them according to your needs.
+These scripts are provided by the **National Archives Catalog API Team**. They may be modified and used according to your needs and the license information listed below.
 
-**Created by:** National Archives Catalog API Team  
+**Created by:** U.S. National Archives and Records Administration, National Archives Catalog API Team
+
 **For questions or feedback**, please contact: [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov)
 
+## Public Domain
+As a work of the United States Government, this project is in the public domain within the United States.
+Additionally, we waive copyright and related rights in the work worldwide through the CC0 1.0 Universal public domain dedication.
+
+## CC0 1.0 Universal Summary
+This is a human-readable summary of the [Legal Code (read the full text)](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+
+## No Copyright
+The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.
+You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
+
+## Other Information
+In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.
+Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law. When using or citing the work, you should not imply endorsement by the author or the affirmer.

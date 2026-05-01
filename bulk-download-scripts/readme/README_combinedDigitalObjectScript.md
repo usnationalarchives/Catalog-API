@@ -1,18 +1,27 @@
-# Combined Digital Object Script - Complete Documentation
+# Combined Digital Object Script
+
+## Contents
+Click below to go directly to the section you need.
+- **[Overview](#overview)**
+- **[Features](#features)**
+- **[Prerequisites](#prerequisites)**
+- **[Usage](#usage)**
+- **[Common Use Cases](#common-use-cases)**
+- **[Advanced Features](#advanced-features)**
+- **[Notes](#notes)**
+- **[Troubleshooting](#troubleshooting)**
 
 ## Overview
 
 The **Combined Digital Object Script** is an all-in-one tool that consolidates the functionality of all the individual download scripts into a single, user-friendly interface. Instead of choosing between multiple specialized scripts, you can use this one script to handle any download scenario with the National Archives Catalog API.
 
-## What Makes This Script Special?
+## Features
 
 This script provides a **menu-driven interface** that guides you through your options, making it ideal for:
 - Users who want a single tool for all their download needs
 - Beginners who aren't sure which specialized script to use
 - Advanced users who want flexibility without switching between scripts
 - Anyone who values a streamlined, interactive workflow
-
-## Features
 
 ### Core Capabilities
 - **Multiple Discovery Methods**: Search by single NAID, parent NAID, custom search, or CSV file
@@ -32,60 +41,56 @@ This script provides a **menu-driven interface** that guides you through your op
 
 ## Prerequisites
 
-### Required Software
-- **Python 3.6 or higher** ([Download here](https://www.python.org/downloads/))
-- Required Python packages:
-  ```bash
-  pip install requests PyPDF2 Pillow img2pdf
-  ```
+### Software Requirements
+- **Python 3.6 or higher** - Download from [python.org](https://www.python.org/downloads/)
+  - **Windows users**: When installing Python, make sure to check the box that says "Add Python to PATH"
+  - **Mac users**: Python 3 is available via Homebrew or directly from python.org
+  - **Linux users**: Python should already be installed; check by running `python3 --version`
 
-### Required Credentials
-- **National Archives Catalog API Key** - Request from [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov)
-- Store as environment variable `CATALOG_API_KEY` or enter when prompted
+### API Key
+- **National Archives Catalog API Key** - Obtain one by emailing [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov)
+  - Store this key securely as it authenticates your requests to the API
+  - **Default limit**: 10,000 API queries per month
+  - **Important**: Do not share your API key or publish it to public repositories (like GitHub). If a key is compromised, contact [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov) to request a new one.
+  - Keys are deactivated after 12 months of inactivity
+  - See [API for the National Archives Catalog](https://www.archives.gov/research/catalog/help/api) for full Terms of Use.
 
-### Storage Requirements
-- Adequate disk space for downloads (can be substantial for large collections)
-- Recommendation: Use external storage for bulk downloads
+### Storage and Hardware
+- **Disk Space**: Bulk downloads consume significant storage space
+- **Recommendation**: Use an external storage device (USB drive, external hard drive, or cloud storage) with at least 16 GB of free space
+- **Example**: Approximately 100,000 JPG files require roughly 250 GB of disk space
+- Plan ahead and ensure you have adequate storage before starting large downloads
 
-## Installation
+## Usage
 
-1. **Install Python 3.6+** from [python.org](https://www.python.org/downloads/)
-   - Windows users: Check "Add Python to PATH" during installation
+#### 1. Install Required Packages
+Run the following command in your terminal to install the required packages:
+```bash
+pip install requests PyPDF2 Pillow img2pdf
+```
 
-2. **Install required packages:**
-   ```bash
-   pip install requests PyPDF2 Pillow img2pdf
-   ```
+#### 2. Set API Key
+Before running the script, ensure you have your API Key. The script will first check if the API Key is set as an environmental variable. If it's not, it will prompt you to enter the key manually.
 
-3. **Set your API key** (optional but recommended):
-   
-   **Windows (PowerShell):**
-   ```powershell
-   $env:CATALOG_API_KEY="your_api_key_here"
-   ```
-   
-   **Mac/Linux (Terminal):**
-   ```bash
-   export CATALOG_API_KEY="your_api_key_here"
-   ```
+To set the API Key as an environmental variable, run the following command in your terminal:
 
-4. **Download the script** to your preferred location
+```bash
+# Windows (PowerShell)
+$env:CATALOG_API_KEY="your_api_key_here"
 
-## How to Use
+# Linux/Mac (Bash)
+export CATALOG_API_KEY="your_api_key_here"
+```
 
-### Basic Usage
+#### 3. Run the Script
+After setting your API Key and ensuring the dependencies are installed, run the script using the following command:
+```bash
+python DownloadObjects_CreatePDF_SingleRecord.py
+```
 
-1. Open your terminal/command prompt
-2. Navigate to the script directory
-3. Run the script:
-   ```bash
-   python combinedDigitalObjectScript.py
-   ```
-4. Follow the interactive menu prompts
+#### Step-by-Step Walkthrough
 
-### Step-by-Step Walkthrough
-
-#### Step 1: Choose Your Discovery Method
+##### Step 1: Choose Your Discovery Method
 
 When you run the script, you'll see this menu:
 
@@ -118,7 +123,7 @@ Select an option (1-4):
 - Input: Keywords or full API query string
 - Examples:
   - Simple: `Tuskegee Airmen`
-  - Advanced: `q=aviation&typeOfMaterials=Maps&year=1945`
+  - Advanced: `q=uap&startDate=1940-01-01&endDate=1950-12-31&typeOfMaterials=Photographs and other Graphic Materials`
 - Tip: You'll also provide a project name for the output folder
 
 **Option 4: CSV File**
@@ -223,9 +228,6 @@ JobName_or_NAID/
 
 **Scenario:** You found a digitized document (NAID 12345678) and want it as a PDF.
 
-```bash
-python combinedDigitalObjectScript.py
-```
 - Choose: **1** (Single NAID)
 - Enter NAID: `12345678`
 - Choose: **D** (Download)
@@ -239,9 +241,6 @@ python combinedDigitalObjectScript.py
 
 **Scenario:** You want all records in Series 654321 as original files (no PDF).
 
-```bash
-python combinedDigitalObjectScript.py
-```
 - Choose: **2** (Parent NAID)
 - Enter Parent NAID: `654321`
 - Choose: **D** (Download)
@@ -255,12 +254,9 @@ python combinedDigitalObjectScript.py
 
 **Scenario:** Search for "Apollo 11" and create a list without downloading.
 
-```bash
-python combinedDigitalObjectScript.py
-```
 - Choose: **3** (Custom search)
 - Project Name: `Apollo11_Photos`
-- Search Terms: `Apollo 11 photographs`
+- Search Terms: `apollo 11&typeOfMaterials=Photographs and other Graphic Materials`
 - Choose: **C** (CSV only)
 
 **Result:** Folder `Apollo11_Photos/` with `Manifest_Apollo11_Photos.csv`
@@ -315,15 +311,17 @@ Tuskegee Airmen
 
 **With filters:**
 ```
-q=maps&typeOfMaterials=Maps&year=1945
+q=maps&startDate=1945&endDate=1945&typeOfMaterials=Maps and Charts
 ```
 
 **Multiple parameters:**
 ```
-q=Kennedy&ancestorNaId=654321&availableOnline=true
+q=apollo 11&typeOfMaterials=Photographs and other Graphic Materials
 ```
-
-**Reference:** [API Documentation](https://catalog.archives.gov/api/v2/docs/)
+> [!TIP]
+> Refer to the resources below to construct your query.  
+> **Available Search Parameters:** [API Documentation](https://catalog.archives.gov/api/v2/api-docs/)  
+> **Advanced Search Builder:** [National Archives Catalog](https://catalog.archives.gov/advanced-search)
 
 ### Natural Sorting in PDFs
 
@@ -345,7 +343,7 @@ TIFF files with multiple pages are handled correctly:
 - Each page converted to RGB for compatibility
 - Maintains page order from the original file
 
-## Error Handling and Resume Support
+## Notes
 
 ### Automatic Error Handling
 
@@ -367,285 +365,28 @@ If the script is interrupted:
 
 ## Troubleshooting
 
-### Common Issues
+- **API Key Issues**: If you receive authentication errors, verify that your API Key is correct and properly set as an environmental variable or entered when prompted.
 
-**"No records with digital objects were found"**
-- **Cause**: Your search criteria didn't match any digitized records
-- **Solution**: 
-  - Check your NAID is correct
-  - Verify the records have `availableOnline=true`
-  - Try broader search terms
-  - Check the Catalog website to confirm digital objects exist
+- **No Records Found**: Ensure your API query is correct and that matching records are marked as `availableOnline`. Test your query in the Catalog API documentation first.
 
-**"API Error 400 or status code not 200"**
-- **Cause**: Invalid query or API unavailable
-- **Solution**:
-  - Verify your NAID is correct (numbers only)
-  - Check your internet connection
-  - For custom searches, verify query syntax
-  - Wait a few minutes and retry (API might be busy)
+- **File Write Errors**: Verify that you have write permissions in the directory where the script is running. Ensure the query name does not contain special characters that are invalid for directory names.
 
-**"Failed to process [filename]"**
-- **Cause**: Image file might be corrupted or unsupported format
-- **Solution**:
-  - Check the original file was downloaded completely
-  - Verify the file format is supported (JPG, TIF/TIFF)
-  - Re-run the script to re-download
-  - If issue persists, that specific file may be problematic
+- **Download Failures**: If specific files fail to download, check the error message printed to the console. This could indicate network issues, invalid URLs, or access restrictions. The script will continue with the next file.
 
-**"Permission denied" or "Cannot delete temp files"**
-- **Cause**: Files are locked by another process or permission issue
-- **Solution**:
-  - Close any programs viewing the files
-  - Wait a few seconds and the script will retry
-  - Run with administrator privileges (Windows)
-  - Check folder permissions
-
-**PDF creation fails with "temp PDF cannot be deleted"**
-- **Cause**: PDF merger hasn't released file handles
-- **Solution**: The script includes automatic delays and retry logic
-  - If it continues failing, try smaller batches
-  - Check available disk space
-  - Close other programs that might be accessing files
+- **Script Interruption**: If the script stops partway through, you can safely re-run it. It will skip already-downloaded files and resume from the next unprocessed page based on the pagination marker.
 
 ### Performance Tips
 
-**Slow downloads:**
+**Slow downloads or disk space issues:**
 - Normal for large image files (TIF files can be 50+ MB each)
 - Check your internet speed
 - Use external storage with fast write speeds
 - Consider downloading during off-peak hours
+- Clean up `Compressed/` folder if script fails mid-process
+- Monitor disk space during long downloads
 
 **High memory usage during PDF creation:**
 - Expected when processing many/large images
 - Close other applications to free RAM
 - Process smaller batches if needed
 - Consider using the "no PDF" option for huge collections
-
-**Disk space issues:**
-- Plan ahead: TIFF files require significant space
-- Use external drives for large collections
-- Clean up `Compressed/` folder if script fails mid-process
-- Monitor disk space during long downloads
-
-## Comparison with Individual Scripts
-
-### When to Use This Combined Script
-
-✅ **Use the Combined Script when:**
-- You want one tool for multiple scenarios
-- You like interactive, guided workflows
-- You're experimenting or doing varied research
-- You want flexibility without switching scripts
-
-### When to Use Individual Scripts
-
-✅ **Use Individual Scripts when:**
-- You have a specific, repeated workflow
-- You're automating with shell scripts
-- You want minimal prompts for batch processing
-- You need specific features unique to one script
-
-### Feature Comparison
-
-| Feature | Combined Script | Individual Scripts |
-|---------|----------------|-------------------|
-| Single NAID download | ✅ | ✅ |
-| Parent NAID (series) | ✅ | ✅ |
-| Custom search | ✅ | ✅ |
-| CSV processing | ✅ | ✅ |
-| PDF creation | ✅ Optional | Some scripts |
-| CSV manifest only | ✅ | One script |
-| Interactive menu | ✅ | ❌ |
-| Automation-friendly | Moderate | ✅ |
-| Single script file | ✅ | ❌ |
-
-## Best Practices
-
-### Before Starting Large Downloads
-
-1. **Test with small datasets first**
-   - Try a single NAID before downloading a series
-   - Verify output format meets your needs
-
-2. **Check available disk space**
-   - Use external storage for large collections
-   - Plan for ~2-3x space if creating PDFs (original + PDF)
-
-3. **Generate CSV manifest first**
-   - Option C lets you preview what will download
-   - Review the manifest before committing to download
-
-4. **Verify your API key is working**
-   - Test with a known NAID first
-   - Check monthly query limits
-
-### During Downloads
-
-1. **Don't interrupt unnecessarily**
-   - Let the script complete when possible
-   - If you must stop, use Ctrl+C (resume later)
-
-2. **Monitor disk space**
-   - Large downloads can fill drives quickly
-   - Script doesn't automatically check disk space
-
-3. **Check logs for errors**
-   - Review console output for failed downloads
-   - Note any repeated errors (might indicate a problem)
-
-### After Downloads
-
-1. **Verify completeness**
-   - Check that expected folders were created
-   - Review `processed_naids.txt` for completion status
-
-2. **Handle failed records**
-   - Script logs failed NAIDs
-   - Re-run to retry failed downloads
-   - Some failures may require manual investigation
-
-3. **Backup your data**
-   - Copy downloaded files to backup storage
-   - Save CSV manifests for record-keeping
-
-## API Usage and Quotas
-
-### Understanding API Limits
-
-- **Default limit**: 10,000 queries per month
-- **Each search counts**: Discovery phase uses queries
-- **Large series**: Can consume many queries quickly
-- **Monitor usage**: Contact [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov) for current usage
-
-### Staying Within Limits
-
-1. **Use CSV workflow for large projects:**
-   - First: Generate manifest (uses queries)
-   - Then: Download from CSV (no additional queries)
-
-2. **Be specific in searches:**
-   - Narrow searches = fewer results = fewer queries
-   - Use parent NAIDs when possible (more efficient)
-
-3. **Plan ahead:**
-   - Generate manifests to estimate query usage
-   - Schedule large downloads across multiple months
-
-## Technical Details
-
-### File Processing Logic
-
-**Image to PDF Conversion:**
-1. Images sorted using natural sorting algorithm
-2. TIFF/TIF files: Converted directly to PDF (multi-page aware)
-3. JPG files: Compressed to 45% quality → Saved to temp → Converted to PDF
-4. Individual PDFs created for each image
-5. All PDFs merged into single document per NAID
-6. Temporary files and folders cleaned up
-
-**File Handle Management:**
-- PDFs explicitly closed after merging
-- 0.5 second delay before cleanup to ensure file release
-- Automatic retry logic for locked files
-
-### Directory Structure
-
-```
-JobName/
-├── processed_naids.txt       # Resume tracking
-├── NAID_1/                   # Individual record folders
-│   ├── original_files.*
-│   └── NAID_1.pdf           # (if PDF enabled)
-├── NAID_2/
-├── Manifest_JobName.csv     # (if CSV option chosen, <100k rows)
-├── Manifest_JobName_part1.csv  # (if CSV option, >100k rows)
-├── Manifest_JobName_part2.csv  # (split files for large datasets)
-└── Manifest_JobName_part3.csv
-```
-
-### Resume Mechanism
-
-The script maintains `processed_naids.txt`:
-- One NAID per line
-- Written after successful completion
-- Checked at start of each NAID processing
-- Failed NAIDs excluded (will retry)
-
-## Support and Resources
-
-### Getting Help
-
-**For script issues:**
-- Review this documentation thoroughly
-- Check the Troubleshooting section
-- Email: [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov)
-
-**For API questions:**
-- [API Documentation](https://www.archives.gov/data/api)
-- [API Swagger Interface](https://catalog.archives.gov/api/v2/docs/)
-- [GitHub Repository](https://github.com/usnationalarchives/catalog-api)
-
-**For understanding records:**
-- [National Archives Data Model](https://www.archives.gov/research/data-model)
-- [Search the Catalog](https://catalog.archives.gov/)
-
-### Reporting Issues
-
-When reporting issues, include:
-- Your operating system and Python version
-- The exact steps you followed
-- Any error messages (copy and paste)
-- Example NAID or search terms (if not sensitive)
-- What you expected vs. what happened
-
-## License and Attribution
-
-**Created by:** National Archives Catalog API Team  
-**Contact:** [Catalog_API@nara.gov](mailto:Catalog_API@nara.gov)
-
-**Required Attribution:**
-If you use this script or the National Archives Catalog API for any public service or application, you must display:
-> "This product uses the National Archives Catalog API but is not endorsed or certified by the National Archives and Records Administration."
-
----
-
-## Quick Reference
-
-### Running the Script
-```bash
-python combinedDigitalObjectScript.py
-```
-
-### Required Packages
-```bash
-pip install requests PyPDF2 Pillow img2pdf
-```
-
-### Setting API Key
-**Windows:**
-```powershell
-$env:CATALOG_API_KEY="your_key"
-```
-
-**Mac/Linux:**
-```bash
-export CATALOG_API_KEY="your_key"
-```
-
-### Menu Options Quick Guide
-| Option | Purpose | When to Use |
-|--------|---------|-------------|
-| 1 | Single NAID | One specific record |
-| 2 | Parent NAID | Entire series/collection |
-| 3 | Custom Search | Keywords or complex queries |
-| 4 | CSV File | Pre-generated URL list |
-| D | Download | Get actual files |
-| C | CSV Only | Generate manifest without downloading |
-| y | Create PDF | Combine images into PDF |
-| n | No PDF | Keep original formats |
-
----
-
-**Last Updated:** February 2026  
-**Script Version:** Combined Digital Object Script v1.0

@@ -1,20 +1,20 @@
-# Generate Object URLs - No Download Script
+# Generate Object URLs for All Child Records with No Download Script
 
-## Table of Contents
+## Contents
 Click below to go directly to the section you need.
 
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Features](#features)
-- [Usage](#usage)
-- [Script Breakdown](#script-breakdown)
-- [Output](#output)
-- [Notes](#notes)
-- [Troubleshooting](#troubleshooting)
+- **[Overview](#overview)**
+- **[Prerequisites](#prerequisites)**
+- **[Features](#features)**
+- **[Usage](#usage)**
+- **[Script Breakdown](#script-breakdown)**
+- **[Output](#output)**
+- **[Notes](#notes)**
+- **[Troubleshooting](#troubleshooting)**
 
 ## Overview
 
-This Python script queries the National Archives Catalog API to retrieve all digital object URLs associated with a specific series and exports them to CSV files. Unlike download scripts, this utility generates a comprehensive list of object URLs without downloading the actual files, making it useful for planning, auditing, or batch processing workflows.
+This Python script queries the National Archives Catalog API to retrieve all digital object URLs associated with a specific series and exports them to CSV files. Unlike download scripts, this utility generates a comprehensive list of object URLs **without** downloading the actual files, making it useful for planning, auditing, or batch processing workflows.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ This Python script queries the National Archives Catalog API to retrieve all dig
 
 ## Features
 
-- **API Integration**: Queries the National Archives Catalog API to fetch digital objects from all records within a specified series.
+- **API Integration**: Queries the National Archives Catalog API to fetch digital objects from all records within a specified NAID (National Archives Identifier).
 - **CSV Export**: Exports object metadata and URLs to CSV files for record-keeping and further processing.
 - **Large Dataset Handling**: Automatically creates new CSV files after 500,000 rows to manage large datasets efficiently.
 - **Pagination Support**: Uses the `searchAfter` parameter to handle API pagination and retrieve all available records.
@@ -60,21 +60,21 @@ python GenerateObjectURLs_NoDownload_AllChildRecords.py
 ### Input Prompts
 
 - **Enter Series NAID:**  
-  Enter the NAID for the series from which you want to retrieve all digital object URLs.
+  Enter the NAID for the series or file unit from which you want to retrieve all digital object URLs.
 
 ### Script Breakdown
 
 #### Key Functions and Operations
 
-- **`get_api_key()`**: Retrieves the API Key from the environment variable `CATALOG_API_KEY` or prompts the user to enter it manually.
+1. **API Key Management**: Checks for the `CATALOG_API_KEY` environmental variable or prompts the user to enter the API Key manually.
 
-- **`fetch_naids_and_digital_objects(series_naid)`**: 
+2. **API Query**:
   - Queries the Catalog API with pagination support
   - Extracts parent NAID, title, and digital object URLs from each record
   - Writes data to CSV files with automatic file rotation after 500,000 rows
   - Uses `searchAfter` parameter for pagination to handle large result sets
 
-- **CSV File Creation**: Creates a new CSV file every 500,000 rows to manage large datasets efficiently
+3. **CSV Export**: Creates a new CSV file every 500,000 rows to manage large datasets efficiently
   - File naming convention: `ObjectsList_{series_naid}_{file_index}.csv`
 
 ## Output
@@ -86,14 +86,6 @@ Each CSV file contains the following columns:
 - **Parent NAID**: The NAID of the record containing the digital object
 - **Title**: The title of the record
 - **Digital Object URL**: The URL to the digital object
-
-#### Example Output File Content:
-```
-Parent NAID,Title,Digital Object URL
-123456789,Sample Historical Document,https://catalog.archives.gov/api/v2/records/123456789/object.jpg
-123456789,Sample Historical Document,https://catalog.archives.gov/api/v2/records/123456789/object_page_2.jpg
-234567890,Another Record,https://catalog.archives.gov/api/v2/records/234567890/object.pdf
-```
 
 #### Console Output Example:
 ```
@@ -109,12 +101,14 @@ Data retrieval complete.
 - The script automatically filters results to include only records where `availableOnline=true`.
 - Large series may generate multiple CSV files (numbered sequentially) if the result set exceeds 500,000 rows.
 - The script queries for records within a specific series using the `ancestorNaId` parameter.
-- API rate limiting may apply depending on your API key tier. The script processes 25 records per API call.
 
 ## Troubleshooting
 
 - **API Key Issues**: If you receive authentication errors, verify that your API Key is correct and properly set as an environmental variable or entered when prompted.
-- **No Records Found**: Ensure the Series NAID you entered is correct and contains records marked as `availableOnline`.
+  
+- **No Records Found**: Ensure the NAID you entered is correct and contains records marked as `availableOnline`.
+
 - **File Write Errors**: Verify that you have write permissions in the directory where the script is running.
-- **Network Issues**: If the script fails partway through, check your network connection and consider rerunning the script. The API will resume from where it left off based on pagination markers.
+
+- **Script Interruption**: If the script is interrupted during processing, you can safely re-run it. The script will resume from where it left off based on pagination markers.
 

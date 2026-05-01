@@ -1,16 +1,16 @@
 # Download Objects Any Search Script
 
-## Table of Contents
+## Contents
 Click below to go directly to the section you need.
 
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Features](#features)
-- [Usage](#usage)
-- [Script Breakdown](#script-breakdown)
-- [Output](#output)
-- [Notes](#notes)
-- [Troubleshooting](#troubleshooting)
+- **[Overview](#overview)**
+- **[Prerequisites](#prerequisites)**
+- **[Features](#features)**
+- **[Usage](#usage)**
+- **[Script Breakdown](#script-breakdown)**
+- **[Output](#output)**
+- **[Notes](#notes)**
+- **[Troubleshooting](#troubleshooting)**
 
 ## Overview
 
@@ -25,9 +25,9 @@ This Python script provides flexible querying and downloading of digital objects
 ## Features
 
 - **Flexible API Querying**: Accepts any valid Catalog API query parameters for custom searches.
-- **Automatic Download**: Retrieves and downloads all digital objects matching your search criteria.
+- **Automatic Downloads**: Retrieves and downloads all digital objects matching your search criteria.
 - **Directory Organization**: Automatically creates directories organized by parent NAID for downloaded files.
-- **CSV Logging**: Creates a temporary CSV file tracking all discovered object URLs.
+- **CSV Logging**: Creates a temporary CSV file tracking all downloaded object URLs.
 - **Pagination Support**: Handles pagination automatically to retrieve all results across multiple API pages.
 - **Online Objects Only**: Filters results to include only records marked as `availableOnline`.
 - **Error Handling**: Provides basic error handling for download failures.
@@ -70,29 +70,31 @@ python DownloadObjects_anySearch.py
 - **Enter your API query (everything that follows https://catalog.archives.gov/api/v2/records/search?):**  
   Enter the complete query parameters you want to use for searching. Examples:
   - `q=Declaration of Independence`
-  - `q=photography&parentNaId=123456789`
-  - `q=Lincoln&recordType=record_group`
+  - `q=pearl harbor&typeOfMaterials=Photographs and other Graphic Materials`
+  - `tagContribution=uap&recordGroupNumber=255`
+> [!TIP]
+> You may use the advanced search function on the [National Archives Catalog](https://catalog.archives.gov/advanced-search) to help construct your query.
 
 ### Script Breakdown
 
 #### Key Functions and Operations
 
-- **API Key Management**: Checks for the `CATALOG_API_KEY` environmental variable or prompts the user to enter the API Key manually.
+1. **API Key Management**: Checks for the `CATALOG_API_KEY` environmental variable or prompts the user to enter the API Key manually.
 
-- **Directory Creation**: Automatically creates a main directory using the query topic name provided by the user.
+2. **Directory Creation**: Creates a directory named after the provided NAID to store all downloaded files and the final PDF.
 
-- **Pagination Loop**: 
+3. **Pagination Loop**: 
   - Iterates through all API results using the `searchAfter` parameter
   - Processes up to 100 records per API call
   - Continues until all matching records are retrieved
 
-- **CSV Processing**:
+4. **CSV Processing**:
   - Extracts parent NAID and digital object URLs from API responses
   - Writes entries to a temporary CSV file (`ListOfObjectsToDownload_{topic}.csv`)
   - Uses the CSV to organize downloads by parent NAID
   - Clears the CSV after each page of results to avoid duplicate downloads
 
-- **File Download**:
+5. **File Download**:
   - Creates subdirectories for each unique parent NAID
   - Downloads each digital object to its corresponding NAID directory
   - Skips files that have already been downloaded
@@ -135,10 +137,9 @@ All objects downloaded! 14:35:42.123456
 ## Notes
 
 - The script automatically filters results to include only records where `availableOnline=true`.
-- The query name you enter should be a **single word** (no spaces) as it's used for directory and file naming.
-- API queries can be complex and include multiple parameters. Refer to the [National Archives Catalog API documentation](https://github.com/usnationalarchives/catalog-api) for valid search parameters.
+- The query name you enter should be a **single word** (no spaces) to be used for directory and file naming.
+- API queries can be complex and include multiple parameters. Refer to the [National Archives Catalog API documentation](https://github.com/usnationalarchives/catalog-api) for valid search parameters and the advanced search function on the [National Archives Catalog](https://catalog.archives.gov/advanced-search) to help construct your query.
 - The temporary CSV file is cleared after processing each page to prevent duplicate downloads.
-- API rate limiting may apply depending on your API key tier. The script processes 100 records per API call.
 - Network interruptions may cause the script to stop. Re-running the script will skip already-downloaded files and continue from where it left off.
 
 ## Troubleshooting

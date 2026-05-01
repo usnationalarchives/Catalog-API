@@ -1,16 +1,15 @@
 
-# Digital Object Downloader Script
+# Download Objects from Single Record with No PDF Script
 
-## Table of Contents
+## Contents
 Click below to go directly to the section you need.
 
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Features](#features)
-- [Usage](#usage)
-- [Script Breakdown](#script-breakdown)
-- [Notes](#notes)
-- [Troubleshooting](#troubleshooting)
+- **[Overview](#overview)**
+- **[Prerequisites](#prerequisites)**
+- **[Features](#features)**
+- **[Usage](#usage)**
+- **[Script Breakdown](#script-breakdown)**
+- **[Troubleshooting](#troubleshooting)**
 
 ## Overview
 
@@ -18,6 +17,7 @@ This Python script downloads digital objects from the National Archives Catalog 
 
 ## Prerequisites
 
+- **National Archives Catalog API Key** which you may obtain by emailing Catalog_API@nara.gov.
 - **Python 3.x** installed on your machine.
 - **requests** Python package installed (`pip install requests`).
 - **PyPDF2** Python package installed (`pip install PyPDF2`).
@@ -26,49 +26,65 @@ This Python script downloads digital objects from the National Archives Catalog 
 
 ## Features
 
-- **API Integration**: Queries the National Archives Catalog API to fetch digital objects based on the provided NAID.
+- **API Integration**: Queries the National Archives Catalog API to fetch all digital objects for a specified NAID.
 - **Directory Management**: Automatically creates a directory for the downloaded files named after the NAID.
-- **CSV Logging**: Logs the URLs of the digital objects into a CSV file for record-keeping.
+- **CSV Logging**: Creates a CSV file tracking all downloaded object URLs.
 - **File Download**: Downloads each digital object to the created directory.
 - **Error Handling**: Provides basic error handling for download failures.
 
 ## Usage
 
-#### 1. Install Dependencies
-Run the following command to install the required dependencies:
+#### 1. Install Required Packages
+Run the following command in your terminal to install the required packages:
 ```bash
 pip install requests PyPDF2 Pillow img2pdf
 ```
 
 #### 2. Set API Key
-The script will prompt you to enter your API Key, either from an environment variable or directly from the console.
+Before running the script, ensure you have your API Key. The script will first check if the API Key is set as an environmental variable. If it's not, it will prompt you to enter the key manually.
+
+To set the API Key as an environmental variable, run the following command in your terminal:
+
+```bash
+# Windows (PowerShell)
+$env:CATALOG_API_KEY="your_api_key_here"
+
+# Linux/Mac (Bash)
+export CATALOG_API_KEY="your_api_key_here"
+```
 
 #### 3. Run the Script
 After setting your API Key and ensuring the dependencies are installed, run the script using the following command:
 ```bash
-python downloader_script.py
+python DownloadObjects_NoPDF_SingleRecord.py
 ```
 
-You will be prompted to enter the NAID of the description that contains the objects to be downloaded. The script will then query the National Archives API, retrieve the metadata, and download the digital objects.
+### Input Prompts
+
+- **Do you have your API Key set as an environmental variable (Y/N)?**  
+  Enter `Y` if the API Key is set as an environmental variable, or `N` to manually input the API Key.
+
+- **File Unit or Item NAID:**  
+    Enter the NAID for the record whose digital objects you want to download.
 
 ### Script Breakdown
 
-#### Key Functions
+#### Key Operations
 
 - **`requests.get()`**: Makes a GET request to the National Archives Catalog API to retrieve metadata based on the provided NAID.
 - **`csv.writer()`**: Writes the URLs of the digital objects into a CSV file for record-keeping.
 - **`urllib.request.urlretrieve()`**: Downloads the digital object from the given URL.
 - **`os.mkdir()`**: Creates a new directory for storing the downloaded files.
 
-### Notes
 
-- Ensure that your API Key is properly set, either as an environment variable or entered manually.
-- The script will create a folder named after the provided NAID in the current directory to store the downloaded files.
-- The script downloads all digital objects listed in the metadata returned by the API.
 
 ### Troubleshooting
 
-- **Failed Downloads**: If a download fails, check the link and ensure it points to a valid digital object. Network issues or invalid URLs may cause failures.
-- **API Key Issues**: If the API Key is invalid or expired, you will need to obtain a new one from the National Archives.
-- **Permissions**: Ensure you have the necessary permissions to write files to the specified directory.
+- **API Key Issues**: If you receive authentication errors, verify that your API Key is correct and properly set as an environmental variable or entered when prompted.
+
+- **No Objects Found**: If no digital objects are found, ensure the NAID you entered is correct and that the record contains digital objects marked as available online.
+
+- **File Write Errors**: Verify that you have write permissions in the directory where the script is running.
+
+- **Insufficient Disk Space**: High-resolution image collections require significant disk space. Ensure your system has enough free space for downloaded files, compressed versions, and temporary PDF files.
 
